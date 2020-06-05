@@ -370,13 +370,14 @@ summary {
 
 <div id="descrizione-del-dataset-di-input" class="section level2">
 <h2>Descrizione del dataset di input</h2>
-<p>Numero di centraline nel dataset di dati: 410 Sono state prese in esame solo le centraline che hanno al piu’ 19 giorni mancant (NA) in ogni mese nel corso del 2015.</p>
+<p>Numero di centraline nel dataset di dati: 410 Sono state prese in esame solo le centraline che hanno al piu’ 19 giorni mancanti (NA) in ogni mese nel corso del 2015.</p>
+<p>NOTA BENE: Se si considerassero solo le stazioni con max 15 (COMPRESO) giorni NA in ogni mese il numero di stazioni scenderebbe a 392 (340 nel caso si accettassero al max 10 giorni NA).</p>
 <div id="distribuzione-delle-centralina-per-quota-altitudine" class="section level3">
 <h3>Distribuzione delle centralina per quota (altitudine)</h3>
 <pre><code>## 
 ## Skim summary statistics
 ## 
-## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
 ##        variable missing complete   n   mean     sd p0 p25  p50   p75 p100
 ##  dfUniche$q_dem       0      410 410 181.97 243.06 -3  27 85.5 252.5 1705
 ##      hist
@@ -395,7 +396,7 @@ summary {
 ##  n variables: 2 
 ##  group variables: tipo_new 
 ## 
-## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
 ##  tipo_new variable missing complete   n   mean     sd p0  p25   p50    p75 p100
 ##     rural    q_dem       0       62  62 348.48 416.06 -3 16.5 170.5 584    1705
 ##  suburban    q_dem       0      104 104 155.19 178.35  0 28.5  88   235.25  899
@@ -420,7 +421,7 @@ summary {
 ##  n variables: 3 
 ##  group variables: mese 
 ## 
-## ── Variable type:character ───────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ──────────────────────────────────────────────────────────────────────────
 ##  mese      variable missing complete   n min max empty n_unique
 ##   Jan id_centralina       0      410 410  34  47     0      410
 ##   Feb id_centralina       0      410 410  34  47     0      410
@@ -435,7 +436,7 @@ summary {
 ##   Nov id_centralina       0      410 410  34  47     0      410
 ##   Dec id_centralina       0      410 410  34  47     0      410
 ## 
-## ── Variable type:integer ─────────────────────────────────────────────────────────────────────────────
+## ── Variable type:integer ────────────────────────────────────────────────────────────────────────────
 ##  mese         variable missing complete   n  mean   sd p0 p25 p50 p75 p100
 ##   Jan numeroDatiValidi       0      410 410 29.4  2.76 13  29  31  31   31
 ##   Feb numeroDatiValidi       0      410 410 26.45 2.57 11  26  28  28   28
@@ -470,7 +471,7 @@ summary {
 ##  n variables: 5 
 ##  group variables: cod_reg 
 ## 
-## ── Variable type:character ───────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ──────────────────────────────────────────────────────────────────────────
 ##  cod_reg       variable missing complete    n min max empty n_unique
 ##        1       cod_reg0       0     1190 1190   1   1     0        1
 ##        1  id_centralina       0     1190 1190  34  35     0       35
@@ -533,7 +534,7 @@ summary {
 ##       20  id_centralina       0      870  870  34  34     0       30
 ##       20 id_centralina0       0      870  870  34  34     0       30
 ## 
-## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
 ##  cod_reg variable missing complete    n   mean    sd    p0   p25    p50    p75
 ##        1 distanze       0     1190 1190  77.47 40.69  1.41 49.09  73.41 104.71
 ##        2 distanze       0        2    2  37.58  0    37.58 37.58  37.58  37.58
@@ -580,7 +581,7 @@ summary {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#fmkigqzlju .gt_table {
+#ezdyiqwmfp .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -603,7 +604,7 @@ summary {
   border-left-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_heading {
+#ezdyiqwmfp .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -615,7 +616,7 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_title {
+#ezdyiqwmfp .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -625,7 +626,7 @@ summary {
   border-bottom-width: 0;
 }
 
-#fmkigqzlju .gt_subtitle {
+#ezdyiqwmfp .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -635,13 +636,13 @@ summary {
   border-top-width: 0;
 }
 
-#fmkigqzlju .gt_bottom_border {
+#ezdyiqwmfp .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_col_headings {
+#ezdyiqwmfp .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -656,7 +657,7 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_col_heading {
+#ezdyiqwmfp .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -676,7 +677,7 @@ summary {
   overflow-x: hidden;
 }
 
-#fmkigqzlju .gt_column_spanner_outer {
+#ezdyiqwmfp .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -688,15 +689,15 @@ summary {
   padding-right: 4px;
 }
 
-#fmkigqzlju .gt_column_spanner_outer:first-child {
+#ezdyiqwmfp .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#fmkigqzlju .gt_column_spanner_outer:last-child {
+#ezdyiqwmfp .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#fmkigqzlju .gt_column_spanner {
+#ezdyiqwmfp .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -708,7 +709,7 @@ summary {
   width: 100%;
 }
 
-#fmkigqzlju .gt_group_heading {
+#ezdyiqwmfp .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -730,7 +731,7 @@ summary {
   vertical-align: middle;
 }
 
-#fmkigqzlju .gt_empty_group_heading {
+#ezdyiqwmfp .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -745,19 +746,19 @@ summary {
   vertical-align: middle;
 }
 
-#fmkigqzlju .gt_striped {
+#ezdyiqwmfp .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#fmkigqzlju .gt_from_md > :first-child {
+#ezdyiqwmfp .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#fmkigqzlju .gt_from_md > :last-child {
+#ezdyiqwmfp .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#fmkigqzlju .gt_row {
+#ezdyiqwmfp .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -776,7 +777,7 @@ summary {
   overflow-x: hidden;
 }
 
-#fmkigqzlju .gt_stub {
+#ezdyiqwmfp .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -788,7 +789,7 @@ summary {
   padding-left: 12px;
 }
 
-#fmkigqzlju .gt_summary_row {
+#ezdyiqwmfp .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -798,7 +799,7 @@ summary {
   padding-right: 5px;
 }
 
-#fmkigqzlju .gt_first_summary_row {
+#ezdyiqwmfp .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -808,7 +809,7 @@ summary {
   border-top-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_grand_summary_row {
+#ezdyiqwmfp .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -818,7 +819,7 @@ summary {
   padding-right: 5px;
 }
 
-#fmkigqzlju .gt_first_grand_summary_row {
+#ezdyiqwmfp .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -828,7 +829,7 @@ summary {
   border-top-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_table_body {
+#ezdyiqwmfp .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -837,7 +838,7 @@ summary {
   border-bottom-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_footnotes {
+#ezdyiqwmfp .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -851,13 +852,13 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_footnote {
+#ezdyiqwmfp .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#fmkigqzlju .gt_sourcenotes {
+#ezdyiqwmfp .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -871,46 +872,46 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#fmkigqzlju .gt_sourcenote {
+#ezdyiqwmfp .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#fmkigqzlju .gt_left {
+#ezdyiqwmfp .gt_left {
   text-align: left;
 }
 
-#fmkigqzlju .gt_center {
+#ezdyiqwmfp .gt_center {
   text-align: center;
 }
 
-#fmkigqzlju .gt_right {
+#ezdyiqwmfp .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#fmkigqzlju .gt_font_normal {
+#ezdyiqwmfp .gt_font_normal {
   font-weight: normal;
 }
 
-#fmkigqzlju .gt_font_bold {
+#ezdyiqwmfp .gt_font_bold {
   font-weight: bold;
 }
 
-#fmkigqzlju .gt_font_italic {
+#ezdyiqwmfp .gt_font_italic {
   font-style: italic;
 }
 
-#fmkigqzlju .gt_super {
+#ezdyiqwmfp .gt_super {
   font-size: 65%;
 }
 
-#fmkigqzlju .gt_footnote_marks {
+#ezdyiqwmfp .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="fmkigqzlju" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="ezdyiqwmfp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="3" class="gt_heading gt_title gt_font_normal" style>Numero stazioni per tipologia centralina e stage analisi (training/validation)</th>
