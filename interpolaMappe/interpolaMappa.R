@@ -1,4 +1,4 @@
-#15 maggio
+#revisione 9 giugno
 rm(list=objects())
 library("tidyverse")
 library("INLA")
@@ -6,27 +6,22 @@ library("assertthat")
 library("inlabru")
 library("sf")
 library("sp")
-library("ggspatial")
+library("furrr")
 library("raster")
 source("parametri.R")
 source("utility.R")
 source("leggi.R")
 options(warn=2,error=recover)
 
+plan(multicore)
 
-purrr::walk(12:12,.f=function(MESE){
-#MESE<-1
+furrr::future_map(5:12,.f=function(MESE){
 
 #lettura parametri per standardizzare i raster
 read_delim("../parametriPerStandardizzareRaster_5giugno2020/rasters_parametri.csv",delim=";",col_names=TRUE)->parametri
 
 #nome del file di output in cui salvare i risultati dell'interpolazione
 nomeBrick<-glue::glue("exp_pm10_mese{MESE}.tif")
-
-#che tipo di mappa plottare?
-#Quattro opzioni: covariate piu' spde (in scala log), covariate spde (scala esponenziale), 
-#solo spde (scala log), solo covariate (scala log)
-qualeMappa<-c("completaLog","completaExp","spde","covariate")[2]
 
 ########################################################################################
 #nomiSpatial: variabili solo spaziali da utilizzare per le mappe (non spazio temporali)
@@ -104,10 +99,7 @@ purrr::walk(nomiSpatial,.f=function(covariataSpaziale){
   
 })
 
-# if(file.exists("spatialLayer.RDS")){file.remove("spatialLayer.RDS")}
-# #lo salviamo su disco in modo di non avere troppi oggetti in memoria
-# saveRDS(spatialLayer,"spatialLayer.RDS")
-# rm(spatialLayer)
+
 
 purrr::map(nomiRasters,.f=function(nomeRaster){
   
@@ -157,6 +149,7 @@ nomiRasters<-names(listaRasters)
 
 #La mesh mi serve per proiettare il latent field
 readRDS(glue::glue("iset{MESE}.RDS"))->iset
+
 #la mesh non varia con i mesi
 readRDS("mesh.RDS")->mesh
 
@@ -175,18 +168,13 @@ tryCatch({
 purrr::map(1:length(YYMMDD),.f=function(qualeGiorno){
 
 
-  if((qualeGiorno==1) && PTP) return(list(media=NULL,std=NULL))
+  if((qualeGiorno==1) && PTP) return(NULL)
   #se uso ptp il primo giorno avra' ptp tuttto NA
   #e quindi una stima di pm10 tutta NA...quindi non posso fare il trim!
   #Restituisco NULL (vedi dopo)
   
-  print(qualeGiorno)
 
-  #meteoLayer e' un raster di 0 laddove il dem esiste, altrimenti NA
-  #uso meteoLayer come base per le somme.
-  VARIANZA.FIXED<-0
-
-  #INIZIALIZZO metoLayer con la componente spaziale
+  #INIZIALIZZO (giorno x giorno) metoLayer con la componente spaziale
   spatialLayer->meteoLayer
   
   #nomiRasters adesso contiene anche ptp.s e tp.s se richiesti
@@ -200,15 +188,10 @@ purrr::map(1:length(YYMMDD),.f=function(qualeGiorno){
     crop(xx,meteoLayer)->xx
     
     meteoLayer+(MEDIA*xx)->>meteoLayer
-    (inla.out$summary.fixed[nomeCovariata,]$sd^2)->varFixed
-    varFixed*(listaRasters[[nomeCovariata]][[qualeGiorno]]^2)+VARIANZA.FIXED->>VARIANZA.FIXED
-
+ 
   })  
   
-
-  #effetto ID_CENTRALINA
-  #inla.out$summary.random$id_centralina$mean->ID_CENTRALINA
-  
+ 
   #spde (media)
   inla.out$summary.random$i[iset$i.group==qualeGiorno,"mean"]->campo
   inla.mesh.projector(mesh,xlim=c(estensione@xmin,estensione@xmax),ylim=c(estensione@ymin,estensione@ymax),dims = c(1287,999))->myproj
@@ -225,79 +208,19 @@ purrr::map(1:length(YYMMDD),.f=function(qualeGiorno){
   #questa e' la media della variabile su scala logaritmica (meteoLayer gia include spatialLayer)
   meteoLayer+SPDE->finaleLog 
 
-  #Ora voglio ottenere il pm10 (passando da scala logaritmica a scala esponenziale)
-  #Ho bisogno della varianza della lognormale, che qui otteniamo in modo approssimativo
-  #sommando le varianze dei singoli componenti del predittore lineare (in realta' le varianze non sono
-  #tra di loro indipendenti)
-  
-  #spde (sd)
-  inla.out$summary.random$i[iset$i.group==qualeGiorno,"sd"]->campo
-  inla.mesh.projector(mesh,xlim=c(estensione@xmin,estensione@xmax),ylim=c(estensione@ymin,estensione@ymax),dims = c(1287,999))->myproj
-  inla.mesh.project(myproj,campo)->campoProj
-  raster(list(x=myproj$x,y=myproj$y,z=campoProj))->myraster
-  crs(myraster)<-CRS("+init=epsg:32632")
-  
-  projectRaster(myraster,meteoLayer)->SD.SPDE
-  SD.SPDE^2->VAR.SPDE
-  rm(SD.SPDE)
-  rm(myraster) 
-  rm(campo)
-  
-  crop(extend(VAR.SPDE,meteoLayer),meteoLayer)->VAR.SPDE
-  crop(extend(VARIANZA.FIXED,meteoLayer),meteoLayer)->VARIANZA.FIXED
-
-  #varianza for wday
-  #inla.out$summary.random$wday$sd[weekDay]^2->mean_var_WDAY
-  #varianza for Gaussian observations: possiamo ignorarla se 
-  #vogliamo ignorare l'errore di misurazione
+  #Variance of the Gaussian observations 
   inla.emarginal(fun=function(x){(1/exp(x))},inla.out$internal.marginals.hyperpar$`Log precision for the Gaussian observations`)->mean_var_GO
-  #varianza di fixed effects: x*beta->x^2*Var(beta)
-  
-  #varianza della log normale (plug-in)
-  VAR.SPDE+VARIANZA.FIXED->varLognormale #+mean_var_GO
-  
+
+ 
   #campo medio di PM10
-  exp(finaleLog+0.5*varLognormale)-1->pm10
+  exp(finaleLog+0.5*mean_var_GO)-1->pm10
   mask(pm10,italia)->pm10 
-  trim(pm10)->pm10
 
+  trim(pm10)
+    
+    
+})->listaMediaPM10
 
-  
-  exp(2*(finaleLog+varLognormale))-exp(varLognormale+2*finaleLog)->varpm10
-  mask(varpm10,italia)->varpm10 #elimino Sardegna
-  trim(varpm10)->varpm10
-  
-  
-  if(qualeMappa=="completaExp"){
-  
-    return(list(media=pm10,std=sqrt(varpm10)))
-    
-  }else if(qualeMappa=="completaLog"){
-    
-    return(list(media=finaleLog,std=sqrt(varLognormale)))  
-    
-  }else if(qualeMappa=="spde"){
-    
-    return(list(media=SPDE,std=sqrt(VAR.SPDE)))  
-    
-  }else if(qualeMappa=="covariate"){
-    
-    return(list(media=meteoLayer,std=sqrt(VARIANZA.FIXED)))  
-    
-    
-  } else{
-    
-    stop("qualeMappa?")
-    
-  }#fine if 
-  
-})->listaRastersPM10
-
-
-#Nel caso in cui PTP==TRUE, la stima del primo giorno sara' NULL!!!
-#Questo non  solo in inverno: se faccio una stima per un mese, comunque
-#non avro' il primo giorno (in realta' per un mese diverso fa gennaio questo valore lo potrei ottenere ma sarebbe piu' complicato)
-purrr::map(listaRastersPM10,"media")->listaMediaPM10
 
 if(PTP){
   
@@ -322,38 +245,5 @@ if(PTP){
 rm(listaMediaPM10)
 if(file.exists(nomeBrick)) file.remove(nomeBrick)
 writeRaster(mybrick,nomeBrick)
-rm(mybrick)
-
-
-purrr::map(listaRastersPM10,"std")->listaStdPM10
-
-if(PTP){
-  
-  which(is.null(listaStdPM10))->qualeNULL
-  stopifnot(qualeNULL==1) #deve essere solo il primo elemento nella lista
-  purrr::compact(listaStdPM10)->listaStdPM10
-  brick(listaStdPM10)->mybrick
-  
-  mybrick[[1]]->primoRaster
-  primoRaster[primoRaster> -9999]<-NA
-  brick(stack(primoRaster,mybrick))->mybrick
-  
-  #il fatto di mantenere il primo raster di NA mi serve per mantenere validi gli indici
-  #ricavati da BANDA e YYMMDD
-  
-}else{
-  
-  brick(listaStdPM10)->mybrick
-  
-}
-
-rm(listaStdPM10)
-if(file.exists(glue::glue("std_{nomeBrick}"))) file.remove(glue::glue("std_{nomeBrick}"))
-writeRaster(mybrick,glue::glue("std_{nomeBrick}"))
-rm(mybrick)
-
-
-#elimino la lista
-rm(listaRastersPM10)
 
 })#FINE PURRR WALK SU MESE
