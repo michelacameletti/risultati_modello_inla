@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2020-06-05" />
+<meta name="date" content="2020-06-10" />
 
 <title>Descrizione dati giornalieri di input</title>
 
@@ -363,7 +363,7 @@ summary {
 
 
 <h1 class="title toc-ignore">Descrizione dati giornalieri di input</h1>
-<h4 class="date">2020-06-05</h4>
+<h4 class="date">2020-06-10</h4>
 
 </div>
 
@@ -377,14 +377,83 @@ summary {
 <pre><code>## 
 ## Skim summary statistics
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────────────
 ##        variable missing complete   n   mean     sd p0 p25  p50   p75 p100
 ##  dfUniche$q_dem       0      410 410 181.97 243.06 -3  27 85.5 252.5 1705
 ##      hist
 ##  ▇▂▁▁▁▁▁▁</code></pre>
 </div>
-<div id="distribuzione-centraline-per-tipologia-stazione" class="section level3">
-<h3>Distribuzione centraline per tipologia stazione</h3>
+<div id="stazioni-al-di-sopra-dei-1000-metri" class="section level3">
+<h3>Stazioni al di sopra dei 1000 metri</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">yymmdd</th>
+<th align="right">mm</th>
+<th align="right">banda</th>
+<th align="left">id_centralina</th>
+<th align="right">pm10</th>
+<th align="right">q_dem</th>
+<th align="right">cod_reg</th>
+<th align="left">tipo_new</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2015-01-17</td>
+<td align="right">1</td>
+<td align="right">17</td>
+<td align="left">IT1961A_5_BETA_2012-10-05_00:00:00</td>
+<td align="right">1.10</td>
+<td align="right">1705</td>
+<td align="right">1</td>
+<td align="left">rural</td>
+</tr>
+<tr class="even">
+<td align="left">2015-03-24</td>
+<td align="right">3</td>
+<td align="right">83</td>
+<td align="left">IT1963A_5_BETA_2012-05-08_00:00:00</td>
+<td align="right">NA</td>
+<td align="right">1609</td>
+<td align="right">1</td>
+<td align="left">rural</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-01-01</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="left">IT1812A_5_BETA_2009-03-31_00:00:00</td>
+<td align="right">11.10</td>
+<td align="right">1221</td>
+<td align="right">3</td>
+<td align="left">rural</td>
+</tr>
+<tr class="even">
+<td align="left">2015-01-29</td>
+<td align="right">1</td>
+<td align="right">29</td>
+<td align="left">IT0908A_5_BETA_2003-04-10_00:00:00</td>
+<td align="right">11.55</td>
+<td align="right">1324</td>
+<td align="right">3</td>
+<td align="left">urban</td>
+</tr>
+<tr class="odd">
+<td align="left">2015-04-15</td>
+<td align="right">4</td>
+<td align="right">105</td>
+<td align="left">IT1672A_5_BETA_2004-10-07_00:00:00</td>
+<td align="right">11.94</td>
+<td align="right">1160</td>
+<td align="right">8</td>
+<td align="left">rural</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="distribuzione-centraline-per-tipologia-stazione-tipo-area" class="section level3">
+<h3>Distribuzione centraline per tipologia stazione (Tipo area)</h3>
 <pre><code>## 
 ##    rural suburban    urban 
 ##       62      104      244</code></pre>
@@ -396,7 +465,7 @@ summary {
 ##  n variables: 2 
 ##  group variables: tipo_new 
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────────────
 ##  tipo_new variable missing complete   n   mean     sd p0  p25   p50    p75 p100
 ##     rural    q_dem       0       62  62 348.48 416.06 -3 16.5 170.5 584    1705
 ##  suburban    q_dem       0      104 104 155.19 178.35  0 28.5  88   235.25  899
@@ -405,6 +474,23 @@ summary {
 ##  ▇▃▂▂▁▁▁▁
 ##  ▇▂▂▁▁▁▁▁
 ##  ▇▂▁▁▁▁▁▁</code></pre>
+</div>
+<div id="descrizione-dei-valori-di-pm10" class="section level3">
+<h3>Descrizione dei valori di PM10</h3>
+<pre><code>## Skim summary statistics
+##  n obs: 149650 
+##  n variables: 2 
+##  group variables: tipo_new 
+## 
+## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────────────
+##  tipo_new variable missing complete     n  mean    sd p0   p25   p50   p75
+##     rural     pm10    1102    21528 22630 21.7  16.43  1 10.98 17.38 27.33
+##  suburban     pm10    2044    35916 37960 26.99 18.09  1 15.39 22.41 32.9 
+##     urban     pm10    3935    85125 89060 28.34 19.07  1 16.07 23.39 34.4 
+##    p100     hist
+##  186.65 ▇▃▁▁▁▁▁▁
+##  337.29 ▇▁▁▁▁▁▁▁
+##  211.67 ▇▃▁▁▁▁▁▁</code></pre>
 </div>
 <div id="distribuzione-mensile-dei-valori-di-pm10" class="section level3">
 <h3>Distribuzione mensile dei valori di PM10</h3>
@@ -421,7 +507,7 @@ summary {
 ##  n variables: 3 
 ##  group variables: mese 
 ## 
-## ── Variable type:character ──────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ───────────────────────────────────────────────────────────────────────────────────
 ##  mese      variable missing complete   n min max empty n_unique
 ##   Jan id_centralina       0      410 410  34  47     0      410
 ##   Feb id_centralina       0      410 410  34  47     0      410
@@ -436,7 +522,7 @@ summary {
 ##   Nov id_centralina       0      410 410  34  47     0      410
 ##   Dec id_centralina       0      410 410  34  47     0      410
 ## 
-## ── Variable type:integer ────────────────────────────────────────────────────────────────────────────
+## ── Variable type:integer ─────────────────────────────────────────────────────────────────────────────────────
 ##  mese         variable missing complete   n  mean   sd p0 p25 p50 p75 p100
 ##   Jan numeroDatiValidi       0      410 410 29.4  2.76 13  29  31  31   31
 ##   Feb numeroDatiValidi       0      410 410 26.45 2.57 11  26  28  28   28
@@ -471,7 +557,7 @@ summary {
 ##  n variables: 5 
 ##  group variables: cod_reg 
 ## 
-## ── Variable type:character ──────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ───────────────────────────────────────────────────────────────────────────────────
 ##  cod_reg       variable missing complete    n min max empty n_unique
 ##        1       cod_reg0       0     1190 1190   1   1     0        1
 ##        1  id_centralina       0     1190 1190  34  35     0       35
@@ -534,7 +620,7 @@ summary {
 ##       20  id_centralina       0      870  870  34  34     0       30
 ##       20 id_centralina0       0      870  870  34  34     0       30
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ─────────────────────────────────────────────────────────────────────────────────────
 ##  cod_reg variable missing complete    n   mean    sd    p0   p25    p50    p75
 ##        1 distanze       0     1190 1190  77.47 40.69  1.41 49.09  73.41 104.71
 ##        2 distanze       0        2    2  37.58  0    37.58 37.58  37.58  37.58
@@ -581,7 +667,7 @@ summary {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#ezdyiqwmfp .gt_table {
+#czdoezdlqq .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -604,7 +690,7 @@ summary {
   border-left-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_heading {
+#czdoezdlqq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -616,7 +702,7 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_title {
+#czdoezdlqq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -626,7 +712,7 @@ summary {
   border-bottom-width: 0;
 }
 
-#ezdyiqwmfp .gt_subtitle {
+#czdoezdlqq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -636,13 +722,13 @@ summary {
   border-top-width: 0;
 }
 
-#ezdyiqwmfp .gt_bottom_border {
+#czdoezdlqq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_col_headings {
+#czdoezdlqq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -657,7 +743,7 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_col_heading {
+#czdoezdlqq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -677,7 +763,7 @@ summary {
   overflow-x: hidden;
 }
 
-#ezdyiqwmfp .gt_column_spanner_outer {
+#czdoezdlqq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -689,15 +775,15 @@ summary {
   padding-right: 4px;
 }
 
-#ezdyiqwmfp .gt_column_spanner_outer:first-child {
+#czdoezdlqq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ezdyiqwmfp .gt_column_spanner_outer:last-child {
+#czdoezdlqq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ezdyiqwmfp .gt_column_spanner {
+#czdoezdlqq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -709,7 +795,7 @@ summary {
   width: 100%;
 }
 
-#ezdyiqwmfp .gt_group_heading {
+#czdoezdlqq .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -731,7 +817,7 @@ summary {
   vertical-align: middle;
 }
 
-#ezdyiqwmfp .gt_empty_group_heading {
+#czdoezdlqq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -746,19 +832,19 @@ summary {
   vertical-align: middle;
 }
 
-#ezdyiqwmfp .gt_striped {
+#czdoezdlqq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ezdyiqwmfp .gt_from_md > :first-child {
+#czdoezdlqq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ezdyiqwmfp .gt_from_md > :last-child {
+#czdoezdlqq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ezdyiqwmfp .gt_row {
+#czdoezdlqq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -777,7 +863,7 @@ summary {
   overflow-x: hidden;
 }
 
-#ezdyiqwmfp .gt_stub {
+#czdoezdlqq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -789,7 +875,7 @@ summary {
   padding-left: 12px;
 }
 
-#ezdyiqwmfp .gt_summary_row {
+#czdoezdlqq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -799,7 +885,7 @@ summary {
   padding-right: 5px;
 }
 
-#ezdyiqwmfp .gt_first_summary_row {
+#czdoezdlqq .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -809,7 +895,7 @@ summary {
   border-top-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_grand_summary_row {
+#czdoezdlqq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -819,7 +905,7 @@ summary {
   padding-right: 5px;
 }
 
-#ezdyiqwmfp .gt_first_grand_summary_row {
+#czdoezdlqq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -829,7 +915,7 @@ summary {
   border-top-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_table_body {
+#czdoezdlqq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -838,7 +924,7 @@ summary {
   border-bottom-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_footnotes {
+#czdoezdlqq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -852,13 +938,13 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_footnote {
+#czdoezdlqq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#ezdyiqwmfp .gt_sourcenotes {
+#czdoezdlqq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -872,46 +958,46 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#ezdyiqwmfp .gt_sourcenote {
+#czdoezdlqq .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#ezdyiqwmfp .gt_left {
+#czdoezdlqq .gt_left {
   text-align: left;
 }
 
-#ezdyiqwmfp .gt_center {
+#czdoezdlqq .gt_center {
   text-align: center;
 }
 
-#ezdyiqwmfp .gt_right {
+#czdoezdlqq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ezdyiqwmfp .gt_font_normal {
+#czdoezdlqq .gt_font_normal {
   font-weight: normal;
 }
 
-#ezdyiqwmfp .gt_font_bold {
+#czdoezdlqq .gt_font_bold {
   font-weight: bold;
 }
 
-#ezdyiqwmfp .gt_font_italic {
+#czdoezdlqq .gt_font_italic {
   font-style: italic;
 }
 
-#ezdyiqwmfp .gt_super {
+#czdoezdlqq .gt_super {
   font-size: 65%;
 }
 
-#ezdyiqwmfp .gt_footnote_marks {
+#czdoezdlqq .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="ezdyiqwmfp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="czdoezdlqq" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="3" class="gt_heading gt_title gt_font_normal" style>Numero stazioni per tipologia centralina e stage analisi (training/validation)</th>

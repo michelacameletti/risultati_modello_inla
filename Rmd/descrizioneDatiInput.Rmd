@@ -1,0 +1,289 @@
+---
+title: Descrizione dati giornalieri di input
+date: "`r lubridate::today()`"
+---
+
+
+```{r intro,warning = FALSE,message=FALSE,echo=FALSE,include=FALSE}
+#5 giugno: rivisitazione del file modello.R per la sola lettura dei dati di input (pm10 giornaliero)
+library("INLA")
+library("tidyverse")
+library("janitor")
+library("sf")
+library("sp")
+library("assertthat")
+library("knitr")
+library("gt")
+source("parametri.R")
+source("utility.R")
+source("leggi.R")
+
+knitr::opts_chunk$set(warning = FALSE,message=FALSE,echo=FALSE)
+
+#legge la directory e desume la regione o area su cui fare l'analisi
+getArea()->info
+info$reg->REGIONI
+info$area->AREA
+
+###### QUESTA PARTE SERVE PER FILTRARE LE STAZIONI PER REGIONI, INVECE DI FARE GIRARE IL MODELLO SU TUTTA ITALIA
+# Il filtro avviene mediante st_intersects tra lo shapefile dell'Italia e i punti stazione
+#Se sardegna==TRUE lo shapefile utilizzato per filtrare le stazioni contiene anche la Sardegna
+leggiItalia(regioni=REGIONI,sardegna=SARDEGNA,buffSize = 25000)->listaItalia #italia ora rappresenta solo REGIONI
+listaItalia[["italia"]]->italia
+listaItalia[["shRegioni"]]->shRegioni
+
+#estensione
+st_bbox(italia)->estensione
+
+
+qualeTrial<-1
+MESE<-1  
+
+read_delim("../archivio/trainingValidation.csv",delim=";",col_names=TRUE) %>%
+    filter(trial==qualeTrial)->infoTrainingValidation
+  
+#numero dei giorni (serve per spde/control.group)
+n_giorni<<-c(31,28,31,30,31,30,31,31,30,31,30,31)[MESE]
+if(MESE!=1){n_giorni<-n_giorni+2} #2 giorni del mese precedente
+      
+      
+#lettura e preparazione dati PM10
+leggi(x=nomeFile,mese=NULL,max.daily.na=MAX.DAILY.NA,soglia=NULL)->stazioni
+
+#associo a stazioni il tipo di centralina (info che vogliamo mantenere nei risultati della validazione)
+left_join(stazioni, infoTrainingValidation[!duplicated(infoTrainingValidation$id_centralina),] %>% dplyr::select(id_centralina,tipo_new))->stazioni
+```
+
+```{r,include=FALSE}
+#prendo solo un dato per centralina
+#sfStazioni contiene tutte le centraline che soddisfano i criteri di completezza mensile (sia training che validation)
+
+#Utilizzo sfStazioni per costruire la mesh (cioe' la mesh la costruisco utilizzando anche i punti per la validazione)
+stazioni->sfStazioni
+sfStazioni[!duplicated(sfStazioni$id_centralina),]->sfStazioni
+    
+
+
+st_as_sf(sfStazioni,coords = c("x","y"),crs=32632)->sfStazioni
+    
+#Interseco con Italia: volendo prendere solo un sottoinsieme delle stazioni
+st_intersects(italia,sfStazioni)->righe
+sfStazioni[unlist(righe),]->sfStazioni
+    
+#ho esattamente le 410 stazioni scelte secondo i criteri di completezza ede elencate in infoTrainingValidation?
+assert_that(nrow(sfStazioni)==nrow(infoTrainingValidation))
+    
+if(REGIONI=="tutte" && SARDEGNA){
+      
+      shRegioni[shRegioni$NAME_1=="Sardegna",]->shSardegna
+      st_intersection(shSardegna,sfStazioni)->sfStazioniSardegna
+      sfStazioniSardegna$id_centralina->CENTRALINE_SARDEGNA
+      
+}#fine if su REGIONI && SARDEGNA
+    
+
+sfStazioni->dfUniche
+st_geometry(dfUniche)<-NULL
+
+nrow(dfUniche)->numeroCentraline   
+```
+
+## Descrizione del dataset di input
+
+Numero di centraline nel dataset di dati: `r numeroCentraline`
+Sono state prese in esame solo le centraline che hanno al piu' `r MAX.DAILY.NA` giorni mancanti (NA) in ogni mese nel corso del 2015.
+
+NOTA BENE: Se si considerassero solo le stazioni con max 15 (COMPRESO) giorni NA in ogni mese il numero di stazioni scenderebbe a 392 (340 nel caso si accettassero al max 10 giorni NA).
+
+
+### Distribuzione delle centralina per quota (altitudine)
+
+```{r}
+skimr::skim(dfUniche$q_dem)
+```
+
+### Stazioni al di sopra dei 1000 metri
+
+```{r}
+knitr::kable(dfUniche[dfUniche$q_dem>=1000,])
+```
+
+### Distribuzione centraline per tipologia stazione (Tipo area)
+
+```{r}
+table(dfUniche$tipo_new)
+```
+
+
+### Distribuzione stazioni per tipologia e quota
+
+```{r}
+skimr::skim(dfUniche %>% dplyr::select(tipo_new,q_dem) %>% group_by(tipo_new))
+```
+
+```{r,include=FALSE}
+#elimino le stazioni in stazioni che non hanno id_centralina in sfStazioni (ovvero le stazioni
+#che non intersecano lo shapefile "italia", dove italia puo' essere l'intera penisola con o senza Sardegna,
+#oppure una regione specifica)
+    
+#Questa operazione ha senso quando vogliamo estrarre i dati per una zona dell'Italia, una regione
+#o un insieme di regioni
+stazioni %>%
+      filter(id_centralina %in% sfStazioni$id_centralina)->subDati
+rm(stazioni) 
+
+subDati %>%
+  mutate(mese=month.abb[mm]) %>%
+  mutate(mese=factor(mese,levels=month.abb,ordered=TRUE))->subDati
+```
+
+### Descrizione dei valori di PM10
+
+```{r}
+skimr::skim(subDati %>% dplyr::select(pm10,tipo_new) %>%group_by(tipo_new))
+```
+
+### Distribuzione mensile dei valori di PM10
+
+```{r,fig.width=10}
+ggplot(data=subDati)+
+  geom_boxplot(aes(x=mese,y=pm10))+
+  theme_bw()
+```
+
+### Distribuzione mensile dei valori di PM10 per tipologia di stazione
+
+```{r,fig.width=10}
+ggplot(data=subDati)+
+  geom_boxplot(aes(x=mese,y=pm10))+
+  facet_wrap(~tipo_new)+
+  theme_bw()
+```
+
+### Quanti dati (non NA) sono disponibili per stazione?
+
+```{r,include=FALSE}
+subDati %>%
+  filter(!is.na(pm10))->subDatiSenzaNA
+
+subDatiSenzaNA %>%
+  group_by(id_centralina,mese)%>%
+  summarise(numeroDatiValidi=n()) %>%
+  ungroup()->conteggioDatiValidi
+```
+
+```{r}
+skimr::skim(conteggioDatiValidi %>% group_by(mese))
+```
+
+### Distanza media tra le stazioni per regione
+
+```{r,include=FALSE}
+st_distance(sfStazioni,by_element = FALSE)->distanze
+as.data.frame(distanze)->dfDistanze
+names(dfDistanze)<-paste(sfStazioni$id_centralina,sfStazioni$cod_reg,sep=".")
+dfDistanze$id_centralina<-sfStazioni$id_centralina
+dfDistanze$cod_reg<-sfStazioni$cod_reg
+
+dfDistanze %>%
+  gather(key="id_centralina2",value="distanze",-id_centralina,-cod_reg) %>%
+  separate(col=id_centralina2,into=c("id_centralina0","cod_reg0"),sep="\\.")%>%
+  mutate(distanze=as.numeric(distanze)) %>%
+  filter(id_centralina!=id_centralina0) %>%
+  filter(cod_reg==cod_reg0)->dfDistanze
+```
+
+```{r}
+skimr::skim(dfDistanze %>% mutate(distanze=distanze/1000) %>% group_by(cod_reg))
+```
+
+```{r stazioniTrainingValidation}
+infoTrainingValidation %>% mutate(stage=ifelse(training==1,"Training","Validation")) %>%
+  dplyr::select(-trial) %>%
+  group_by(tipo_new,stage) %>% summarise(stazioni=n()) %>% ungroup()->conteggioStazioniTraininValidation
+
+#tabella
+gt(conteggioStazioniTraininValidation,rowname_col = "tipo_new") %>%
+  tab_header(title = "Numero stazioni per tipologia centralina e stage analisi (training/validation)")
+```
+
+
+```{r,eval=FALSE}
+######################## Definizione dataset di training/validation
+if(!FAI.GIRARE.IL.MODELLO.CON.TUTTE.LE.STAZIONI){
+      infoTrainingValidation[infoTrainingValidation$training==1,]$id_centralina->idTraining
+      infoTrainingValidation[infoTrainingValidation$training==0,]$id_centralina->idValidation    
+}else{
+      infoTrainingValidation$id_centralina->idTraining
+      assert_that(length(idTraining)==410)
+      infoTrainingValidation[!(infoTrainingValidation$id_centralina %in% idTraining),]$id_centralina->idValidation
+      assert_that(length(idValidation)==0) #deve essere vuoto!
+}  
+    assert_that(length(idTraining)>0)
+    
+#assegno a subTrainingDati solo le centraline/dati in idTraining
+subDati %>%
+      filter(id_centralina %in% idTraining)->subTrainingDati
+    
+st_as_sf(subTrainingDati,coords=c("x","y"),crs=32632)->puntiTraining
+st_transform(puntiTraining,crs=CRS("+proj=utm +zone=32 +datum=WGS84 +units=km +no_defs"))->puntiTraining
+as.matrix(sf::st_coordinates(puntiTraining))->coordinatePuntiTraining
+#st_write(puntiTraining,"stazioniTraining","stazioniTraining",driver="ESRI Shapefile",append=FALSE)
+    
+    
+if(length(idValidation)){
+      
+      saveRDS(idValidation,glue::glue("idValidation{qualeTrial}.RDS"))
+      
+      subDati %>%
+        filter(id_centralina %in% idValidation)->subValidationDati
+      
+      st_as_sf(subValidationDati,coords=c("x","y"),crs=32632)->puntiValidation
+      st_transform(puntiValidation,crs=CRS("+proj=utm +zone=32 +datum=WGS84 +units=km +no_defs"))->puntiValidation
+      as.matrix(sf::st_coordinates(puntiValidation))->coordinatePuntiValidation
+      #st_write(puntiValidation,"stazioniValidation","stazioniValidation",driver="ESRI Shapefile",append=FALSE)
+      
+}#fine if su validation dataset
+    
+rm(subDati)
+    
+########################
+#Mesh    
+########################
+
+st_transform(italia,crs=CRS("+proj=utm +zone=32 +datum=WGS84 +units=km +no_defs"))->italia
+as_Spatial(italia)->italiasp
+    
+#importante trasformare in km sfStazioni: altrimenti non posso usare convex=90 (dovrei indicare in metri)
+st_transform(sfStazioni,crs=CRS("+proj=utm +zone=32 +datum=WGS84 +units=km +no_defs"))->sfStazioni
+    
+#SE sto considerando anche la Sardegna, devo costruire la mesh utilizzando due set di dati
+if(exists("CENTRALINE_SARDEGNA")){
+      
+      as_Spatial(sfStazioni %>% filter(!(id_centralina %in% CENTRALINE_SARDEGNA)))->puntiTerraferma
+      as_Spatial(sfStazioni %>% filter((id_centralina %in% CENTRALINE_SARDEGNA)))->puntiIsola
+
+      inla.nonconvex.hull(points =  puntiTerraferma,convex = 90)->terraferma
+      inla.nonconvex.hull(points = puntiIsola,convex=90)->isola 
+      mesh<-inla.mesh.2d(boundary =list(list(terraferma,isola)), max.edge = c(30,150),cutoff=5,offset=c(10),min.angle = 25)
+
+}else{
+      
+      inla.nonconvex.hull(points = coordinatePuntiMesh)->pts
+      mesh<-inla.mesh.2d(boundary = pts, max.edge = c(30,100),cutoff=5,offset=c(5))
+      
+}#fine if
+    
+    
+# Il sistema di coordinate va trasformato da epsg 32632 in metri a km
+st_transform(shRegioni,crs=CRS("+proj=utm +zone=32 +datum=WGS84 +units=km +no_defs"))->shRegioni
+    
+png(glue::glue("./images/mesh{qualeTrial}.png"),width=502,height=502)
+    plot(mesh)
+    plot(st_geometry(shRegioni),add=TRUE,lwd=2) #shRegioni mi serve solo per disegnare ogni regione con i suoi confini
+    plot(st_geometry(puntiTraining),add=TRUE,bg="red",pch=21)
+    if(length(idValidation)){plot(st_geometry(puntiValidation),add=TRUE,bg="green",pch=21)}
+dev.off()
+saveRDS(mesh,"mesh.RDS")
+```
+  
