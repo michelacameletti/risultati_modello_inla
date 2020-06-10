@@ -10,15 +10,15 @@ library("sf")
 library("sp")
 library("ggspatial")
 library("raster")
-library("rasterVis")
+library("furrr")
 source("parametri.R")
 source("utility.R")
 source("leggi.R")
 options(warn=2,error=recover)
 
-MESE<-4
+plan(multicore)
 
-purrr::walk(12:12,.f=function(MESE){
+furrr::future_map(5:12,.f=function(MESE){
 
 nomeBrick<-glue::glue("exp_pm10_mese{MESE}.tif")
 nomeBrickPDF<-stringr::str_replace(nomeBrick,"tif","pdf")
