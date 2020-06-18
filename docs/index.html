@@ -10,7 +10,7 @@
 
 
 
-<meta name="date" content="2020-06-10" />
+<meta name="date" content="2020-06-18" />
 
 <title>Risultati modello PM10, 2015</title>
 
@@ -363,12 +363,16 @@ summary {
 
 
 <h1 class="title toc-ignore">Risultati modello PM10, 2015</h1>
-<h4 class="date">2020-06-10</h4>
+<h4 class="date">2020-06-18</h4>
 
 </div>
 
 
 <p>Sintesi dei risultati del modello definitivo. Il modello e’ stato fatto girare per tutti e i 12 mesi del 2015 utilizzando la formula qui di seguito riportata.</p>
+<div id="esempio-di-mesh-per-il-paper" class="section level2">
+<h2>Esempio di mesh per il paper</h2>
+<p><a href="./mesh.html">Mesh per il paper, colori da rivedere</a></p>
+</div>
 <div id="formula-definitva-modello" class="section level2">
 <h2>Formula definitva modello</h2>
 <p>~, lpm10, Intercept + dust + aod550.s + log.pbl00.s + log.pbl12.s + sp.s + t2m.s + tp.s + ptp.s + q_dem.s + i_surface.s + d_a1.s + f(id_centralina, model = “iid”) + f(i, model = spde, group = i.group, control.group = list(model = “ar1”, hyper = list(theta = theta_hyper))) - 1</p>

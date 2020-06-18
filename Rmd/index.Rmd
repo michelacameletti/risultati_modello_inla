@@ -5,6 +5,10 @@ date: "`r lubridate::today()`"
 
 Sintesi dei risultati del modello definitivo. Il modello e' stato fatto girare per tutti e i 12 mesi del 2015 utilizzando la formula qui di seguito riportata.
 
+## Esempio di mesh per il paper
+
+[Mesh per il paper, colori da rivedere](./mesh.html)
+
 ## Formula definitva modello
 
 ```{r formula,include=FALSE}

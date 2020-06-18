@@ -1,0 +1,6 @@
+---
+title: Esempio di mesh con stazioni
+output: html_document
+---
+
+![Esempio di mesh](./esempioMeshArticolo.png)
