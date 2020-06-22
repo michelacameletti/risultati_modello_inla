@@ -1,0 +1,56 @@
+---
+title: hyperparametri modello
+date: "`r lubridate::today()`"
+output: html_document
+---
+
+```{r intro,echo=FALSE,warning=FALSE,message=FALSE}
+library("vroom")
+library("tidyverse")
+library("skimr")
+library("gt")
+```
+
+```{r}
+vroom("hyperparametri.csv",delim=";",col_names = TRUE)->dati
+```
+
+```{r}
+dati %>%
+  filter(parametri=="GroupRho for i") %>%
+  mutate(mese=month.name[mm]) %>%
+  mutate(mese=factor(mese,levels=month.name,ordered = TRUE,labels = month.name))->subDati
+```
+
+```{r}
+ggplot(data=subDati,aes(x=mm,y=mean))+
+  geom_line()+
+  geom_point()+
+  theme_bw()+
+  scale_x_continuous(labels =subDati$mese,breaks=1:12)
+```
+
+```{r tabella}
+gt(dati %>% filter(grepl("Rho",parametri)),rowname_col = "mm") %>%
+  gt::tab_header(title="Sintesi iperparametri modello - GroupRho for i")
+```
+
+```{r tabella2}
+gt(dati %>% filter(grepl("centralina",parametri)),rowname_col = "mm") %>%
+  gt::tab_header(title="Sintesi iperparametri modello - Precision for id_centralina")
+```
+
+```{r tabella3}
+gt(dati %>% filter(grepl("Gaussian",parametri)),rowname_col = "mm") %>%
+  gt::tab_header(title="Sintesi iperparametri modello - Precision for the Gaussian observations")
+```
+
+```{r tabella4}
+gt(dati %>% filter(grepl("Range",parametri)),rowname_col = "mm") %>%
+  gt::tab_header(title="Sintesi iperparametri modello - Range for i")
+```
+
+```{r tabella5}
+gt(dati %>% filter(grepl("Stdev",parametri)),rowname_col = "mm") %>%
+  gt::tab_header(title="Sintesi iperparametri modello - Stdev for i")
+```
