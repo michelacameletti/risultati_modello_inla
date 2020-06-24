@@ -1,0 +1,25 @@
+---
+title: Evento dust 4 maggio
+date: "`r lubridate::date()`"
+output: html_document
+---
+
+```{r, echo=FALSE,message=FALSE,warning=FALSE}
+rm(list=objects())
+library("magick")
+```
+
+## Simulazione evento dust
+
+```{r}
+image_animate(image_read("2015050412-3H_SDSWAS_NMMB-BSC-v2_OPER-OD550_DUST--loop-.gif"))
+```
+
+## INLA
+
+```{r}
+c(unlist(list.files(pattern="^grafico[0-9]\\.+png$")),unlist(list.files(pattern="^grafico1.+png$")))->lista
+image_read(lista) %>%
+  image_scale("50%") %>%
+image_animate(.,dispose = "background",delay=100)
+```
