@@ -49,3 +49,11 @@ update(myformula,.~.+f(id_centralina,model="iid")+f(i,model=spde,group = i.group
 ## Esempio di file gif per il mese di Gennaio
 
 [Filmato dell'andamento giornaliero del PM10](./videoMappa.html). Attenzione: nel file gif la scala rimane sempre fissa al massimo valore osservato (risolvere questo problema!). Il mese si chiude con un evento di dust visibile in Sicilia.
+
+## Eventi di dust
+
+Le palette dei colori delle mappe INLA sono quelli del package "scico".
+
+[Evento del 4 maggio](./evento_4maggio.html)
+
+[Evento dell'11 giugno](./evento_11giugno.html)
