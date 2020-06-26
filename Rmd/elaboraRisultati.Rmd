@@ -1,0 +1,363 @@
+---
+title: Risultati e grafici training/validation dataset
+date: "`r lubridate::date()`"
+output: html_document
+---
+
+```{r intro,warning=FALSE,message=FALSE,echo=FALSE,include=FALSE}
+#26 giugno 2020: elaborazione dei risultati della cross-validation del modello una volta
+#individuate le sole covariate di interesse
+rm(list=objects())
+library("vroom")
+library("tidyverse")
+library("skimr")
+library("gt")
+library("plotrix")
+library("pals") #palette stepped3
+library("scico")
+library("patchwork")
+library("knitr")
+
+knitr::opts_chunk$set(message=FALSE,warning = TRUE,echo=FALSE, include = TRUE)
+
+pals::stepped3()->ColoriTaylor
+ColoriTaylor[c(1,2,5:7,9:11,13:15,3)]->ColoriTaylor
+
+vroom("risultatiValidazione.csv",delim=";",col_names = TRUE)->dati
+
+#assegna il nome aimesi
+dati %>%
+  mutate(trial.month.name=month.name[trial.month]) %>%
+  mutate(trial.month.name=factor(trial.month.name,levels=month.name,ordered = TRUE))->dati
+
+
+#Passiamo alla scala esponenziale: lfitted e' il linear predictor
+dati %>%
+  mutate(fitted=exp(lfitted+0.5*(error.sd^2))) %>%
+  mutate(pm10=exp(lpm10)) %>%
+  mutate(errore=pm10-fitted)->dati #errore
+  
+#Creiamo stagione (season) e nome stagione (season.name)
+stagioni<-c("Winter","Spring","Summer","Autumn")
+
+dati  %>%
+  mutate(season=case_when(trial.month %in% c(1,2,12)~1,
+         trial.month %in% c(3,4,5)~2,
+         trial.month %in% c(6,7,8)~3,
+         TRUE~4)) %>%
+  mutate(season.name=factor(stagioni[season],levels=stagioni,ordered = TRUE,labels=stagioni))->dati
+```
+
+### Numero di centraline
+
+```{r tabella}
+dati %>%
+  filter(yymmdd=="2015-01-01") %>%
+  group_by(tipo_new,trial,stage) %>%
+  summarise(stationNumber=n()) %>%
+  ungroup()->conteggio
+
+gt(conteggio,rowname_col = "tipo_new") %>%
+  gt::tab_header(title="Number of stations per tipology/stage run")
+```
+
+
+
+### Diagrammi di Taylor per confrontare i modelli nelle diverse stagioni
+
+```{r taylor,fig.width=8,fig.height=8}
+#pdf("DiagrammiTaylor.pdf",10,10)
+
+par(mfrow=c(2,2))
+
+purrr::walk(c(1,2,12),.f=function(mm){
+  
+  dati %>%
+    filter(trial.month==mm & stage=="training")->subDatiT
+  
+  dati %>%
+    filter(trial.month==mm & stage=="validation")->subDatiV  
+  
+  ifelse(mm==1,FALSE,TRUE)->ADD
+  "January - February - December"->TITOLO
+  
+  plotrix::taylor.diagram(ref=subDatiT$pm10,model = subDatiT$fitted,add = ADD,col = ColoriTaylor[mm],main = TITOLO,cex.main=1,normalize=TRUE)
+  plotrix::taylor.diagram(ref=subDatiV$pm10,model = subDatiV$fitted,add = TRUE,col = ColoriTaylor[mm],cex.main=1,normalize=TRUE,pch = 8,main=TITOLO)  
+
+})
+
+purrr::walk(c(3,4,5),.f=function(mm){
+  
+  dati %>%
+    filter(trial.month==mm & stage=="training")->subDatiT
+  
+  dati %>%
+    filter(trial.month==mm & stage=="validation")->subDatiV  
+
+  ifelse(mm==3,FALSE,TRUE)->ADD
+  "March - April - May"->TITOLO  
+  
+  plotrix::taylor.diagram(ref=subDatiT$pm10,model = subDatiT$fitted,add = ADD,col = ColoriTaylor[mm],main=TITOLO,cex.main=1,normalize=TRUE)
+  plotrix::taylor.diagram(ref=subDatiV$pm10,model = subDatiV$fitted,add = TRUE,col = ColoriTaylor[mm],cex.main=1,normalize=TRUE,pch = 8,main=TITOLO)  
+  
+})
+
+purrr::walk(c(6,7,8),.f=function(mm){
+  
+  dati %>%
+    filter(trial.month==mm & stage=="training")->subDatiT
+  
+  dati %>%
+    filter(trial.month==mm & stage=="validation")->subDatiV  
+  
+  ifelse(mm==6,FALSE,TRUE)->ADD
+  "June - July - August"->TITOLO
+  
+  plotrix::taylor.diagram(ref=subDatiT$pm10,model = subDatiT$fitted,add = ADD,col = ColoriTaylor[mm],main=TITOLO,cex.main=1,normalize=TRUE)
+  plotrix::taylor.diagram(ref=subDatiV$pm10,model = subDatiV$fitted,add = TRUE,col = ColoriTaylor[mm],cex.main=1,normalize=TRUE,pch = 8,main=TITOLO)  
+
+    
+})
+
+purrr::walk(c(11,10,9),.f=function(mm){
+
+  dati %>%
+    filter(trial.month==mm & stage=="training")->subDatiT
+  
+  dati %>%
+    filter(trial.month==mm & stage=="validation")->subDatiV    
+  
+  ifelse(mm==11,FALSE,TRUE)->ADD
+  "September - October - November"->TITOLO
+  
+  plotrix::taylor.diagram(ref=subDatiT$pm10,model = subDatiT$fitted,add = ADD,col = ColoriTaylor[mm],main=TITOLO,cex.main=1,normalize=TRUE)
+  plotrix::taylor.diagram(ref=subDatiV$pm10,model = subDatiV$fitted,add = TRUE,col = ColoriTaylor[mm],cex.main=1,normalize=TRUE,pch = 8,main=TITOLO)  
+  
+})
+
+#dev.off()
+```
+
+### Diagrammi di Taylor per tipologia stazione
+
+```{r taylor2,fig.width=5,fig.height=5}
+ColoriTaylor2<-ColoriTaylor[c(1,3,6)]
+#Diagrammi di Taylor non per stagione ma per tipologia centralina
+purrr::iwalk(c("urban","suburban","rural"),.f=function(.x,.y){
+  
+  dati %>%
+    filter(tipo_new==.x & stage=="training")->subDatiT
+  
+  dati %>%
+    filter(tipo_new==.x & stage=="validation")->subDatiV    
+  
+  ifelse(.x=="urban",FALSE,TRUE)->ADD
+  "Urban - Suburban - rural"->TITOLO
+  
+  plotrix::taylor.diagram(ref=subDatiT$pm10,model = subDatiT$fitted,add = ADD,col = ColoriTaylor2[.y],main=TITOLO,cex.main=1,normalize=TRUE)
+  plotrix::taylor.diagram(ref=subDatiV$pm10,model = subDatiV$fitted,add = TRUE,col = ColoriTaylor2[.y],cex.main=1,normalize=TRUE,pch = 8,main=TITOLO)  
+  
+})
+```
+
+### Scatterplots
+
+```{r scatterplot1,fig.width=5,fig.height=10}
+ggplot(data=dati %>% filter(stage=="training"),aes(x=pm10,y=fitted))+
+  geom_hex()+
+  geom_abline(slope=1,intercept=0,colour="red")+
+  scale_fill_scico(palette = "batlow")+
+  facet_wrap(~season.name,scales = "free")+
+  labs(title="Training Stage")+
+  theme_bw()+
+  theme(panel.grid= element_blank())->graficoTraining
+
+ggplot(data=dati %>% filter(stage=="validation"),aes(x=pm10,y=fitted))+
+  geom_hex()+
+  geom_abline(slope=1,intercept=0,colour="red")+
+  scale_fill_scico(palette = "nuuk")+
+  facet_wrap(~season.name,scales = "free")+
+  labs(title="Validation Stage")+
+  theme_bw()+
+  theme(panel.grid= element_blank())->graficoValidation
+
+graficoTraining/graficoValidation
+```
+
+### Metriche di validazione
+
+Da confrontare con i risultati OpenAir prodotti da Giorgio
+
+### Scatterplot per tipo di centralina
+
+```{r scatterplot3,fig.width=5,fig.height=10}
+ggplot(data=dati %>% filter(stage=="training"),aes(x=pm10,y=fitted))+
+  geom_point(alpha=0.25,aes(fill=errore),pch=21)+
+  geom_abline(slope=1,intercept = 0,colour="red")+
+  labs(title="Training Stage")+
+  scale_fill_scico(palette="nuuk")+
+  facet_wrap(~tipo_new,ncol=1)+
+  theme_bw()+
+  theme(panel.grid= element_blank())->graficoT
+
+ggplot(data=dati %>% filter(stage=="validation"),aes(x=pm10,y=fitted))+
+  geom_point(alpha=0.25,aes(fill=errore),pch=21)+
+  geom_abline(slope=1,intercept = 0,colour="red")+
+  labs(title="Validation Stage")+
+  scale_fill_scico(palette="nuuk")+
+  facet_wrap(~tipo_new,ncol=1)+
+  theme_bw()+
+  theme(panel.grid= element_blank())->graficoV
+
+graficoT/graficoV
+```
+
+### RMSE, Correlazione e bias
+
+```{r rmseSuperFormula,include=TRUE}
+rmseFun<-function(x,y){
+  
+  sqrt(mean((x-y)^2,na.rm=TRUE))
+  
+}#fine rmseFun
+```
+
+Calcolo delle metriche su tutti i punti stazione per training/validation stage
+
+```{r summarize}
+#rmse/correlazione calcolato su tutte le stazioni, distinguendo tra training e validation
+dati %>% 
+  group_by(stage) %>%
+  summarize(rmse=rmseFun(pm10,fitted),
+            cor=cor(pm10,fitted,use="pairwise.complete.obs"),
+            bias=mean(pm10-fitted,na.rm=TRUE)) %>%
+  ungroup()->risultatiPuntuali
+
+knitr::kable(risultatiPuntuali)
+```
+
+Calcolo delle metriche per training/validation stage per punti stazione
+
+```{r}
+dati %>% 
+  group_by(id_centralina,stage)%>%
+  summarize(rmse=rmseFun(pm10,fitted),
+            cor=cor(pm10,fitted,use="pairwise.complete.obs"),
+            bias=mean(pm10-fitted,na.rm=TRUE)) %>%
+  ungroup()->risRmse
+
+skim(risRmse  %>% group_by(stage))
+```
+
+```{r, fig.width=5,fig.height=10}
+ggplot(data=risRmse,aes(x=1,y=rmse))+
+  geom_boxplot()+
+  facet_wrap(~stage)+
+  labs(title="RMSE")+
+  coord_flip()+
+  theme_bw()
+
+ggplot(data=risRmse,aes(x=1,y=cor))+
+  geom_boxplot()+
+  facet_wrap(~stage)+
+  labs(title="Correlazione")+
+  coord_flip()+
+  theme_bw()
+
+ggplot(data=risRmse,aes(x=1,y=bias))+
+  geom_boxplot()+
+  facet_wrap(~stage)+
+  labs(title="Bias")+
+  coord_flip()+
+  theme_bw()
+
+rm(risRmse)
+```
+
+
+### RMSE, Correlazione e bias per mese
+
+```{r summarise2}
+dati %>% 
+  group_by(stage,season,season.name) %>%
+  summarize(rmse=rmseFun(pm10,fitted),
+            cor=cor(pm10,fitted,use="pairwise.complete.obs"),
+            bias=mean(pm10-fitted,na.rm=TRUE)) %>%
+  ungroup()->risultatiPuntuali
+
+knitr::kable(risultatiPuntuali)
+```
+
+### RMSE, Correlazione e bias per centralina, mese
+
+```{r}
+dati %>% 
+  group_by(id_centralina,stage,season,season.name)%>%
+  summarize(rmse=rmseFun(pm10,fitted),
+            cor=cor(pm10,fitted,use="pairwise.complete.obs"),
+            bias=mean(pm10-fitted,na.rm=TRUE)) %>%
+  ungroup()->risRmse
+
+skim(risRmse  %>% group_by(stage,season))
+```
+
+```{r}
+ggplot(data=risRmse,aes(x=1,y=rmse))+
+  geom_boxplot()+
+  facet_wrap(season.name~stage)+
+  labs(title="RMSE")+
+  coord_flip()+
+  theme_bw()
+
+ggplot(data=risRmse,aes(x=1,y=cor))+
+  geom_boxplot()+
+  facet_wrap(season.name~stage)+
+  labs(title="Correlazione")+
+  coord_flip()+
+  theme_bw()
+
+ggplot(data=risRmse,aes(x=1,y=bias))+
+  geom_boxplot()+
+  facet_wrap(season.name~stage)+
+  labs(title="Bias")+
+  coord_flip()+
+  theme_bw()
+```
+
+
+### RMSE, Correlazione e bias per centralina/stagione/tipo centralina
+
+```{r}
+dati %>% 
+  group_by(id_centralina,stage,season,season.name,tipo_new)%>%
+  summarize(rmse=rmseFun(pm10,fitted),
+            cor=cor(pm10,fitted,use="pairwise.complete.obs"),
+            bias=mean(pm10-fitted,na.rm=TRUE)) %>%
+  ungroup()->risRmse
+
+skim(risRmse  %>% group_by(stage,season,season.name,tipo_new))
+```
+
+```{r}
+ggplot(data=risRmse,aes(x=tipo_new,y=rmse))+
+  geom_boxplot()+
+  facet_wrap(season.name~stage)+
+  labs(title="RMSE")+
+  coord_flip()+
+  theme_bw()
+
+ggplot(data=risRmse,aes(x=tipo_new,y=cor))+
+  geom_boxplot()+
+  facet_wrap(season.name~stage)+
+  labs(title="Correlazione")+
+  coord_flip()+
+  theme_bw()
+
+ggplot(data=risRmse,aes(x=tipo_new,y=bias))+
+  geom_boxplot()+
+  facet_wrap(season.name~stage)+
+  labs(title="Bias")+
+  coord_flip()+
+  theme_bw()
+```
+

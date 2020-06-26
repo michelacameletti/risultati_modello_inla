@@ -43,6 +43,8 @@ update(myformula,.~.+f(id_centralina,model="iid")+f(i,model=spde,group = i.group
 
 [Output scores from OpenAir R package](./performancepm10.html). Primi risultati forniti da Giorgio utilizzando OpenAir.
 
+[Altri risultati validazione prodotti da Guido](./elaboraRisultati.html)
+
 - *Verificare quali di questi scores coincidono con quelli dell'articolo di Michela*
 - *Gli scores sono stati calcolati distinguendo tra training e validation dataset?*
 
