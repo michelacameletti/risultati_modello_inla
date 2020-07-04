@@ -45,6 +45,8 @@ update(myformula,.~.+f(id_centralina,model="iid")+f(i,model=spde,group = i.group
 
 [Altri risultati validazione prodotti da Guido](./elaboraRisultati.html)
 
+[Altri risultati validazione prodotti da Guido: diagrammi di Taylor non normalizzati](./elaboraRisultati2.html)
+
 - *Verificare quali di questi scores coincidono con quelli dell'articolo di Michela*
 - *Gli scores sono stati calcolati distinguendo tra training e validation dataset?*
 
