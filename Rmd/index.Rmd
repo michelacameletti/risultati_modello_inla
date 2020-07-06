@@ -12,10 +12,10 @@ Sintesi dei risultati del modello definitivo. Il modello e' stato fatto girare p
 ## Formula definitva modello
 
 ```{r formula,include=FALSE}
-#fixed effects
+# Fixed effects
 lpm10~Intercept+dust+aod550.s+log.pbl00.s+log.pbl12.s+sp.s+t2m.s+tp.s+ptp.s+q_dem.s+i_surface.s+d_a1.s-1->myformula
 
-#random effects
+# Random effects
 update(myformula,.~.+f(id_centralina,model="iid")+f(i,model=spde,group = i.group,control.group = list(model="ar1",hyper=list(theta=theta_hyper))))->myformula
 
 ```
@@ -27,6 +27,12 @@ update(myformula,.~.+f(id_centralina,model="iid")+f(i,model=spde,group = i.group
 ## Dati di input
 
 [Descrizione del dataset di dati giornalieri di PM10](./descrizioneDatiInput.html)
+
+## Dati di output
+
+[Descrizione dei dati di output ricavati facendo girare i modelli con tutte le stazioni](./descriviDati.html)
+
+In questa pagina viene riportata la distribuzione dei valori previsti interpolati, ricavati dalle mappe rasters.
 
 ## Fixed effects
 

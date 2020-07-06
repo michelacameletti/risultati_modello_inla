@@ -1,0 +1,62 @@
+---
+title: Descrizionnei dati previsti
+output: html_document
+date: "`r lubridate::date()`"
+---  
+
+```{r,include=F,warning=F,message=F,echo=F}
+rm(list=objects())
+library("vroom")
+library("tidyverse")
+library("skimr")
+library("raster")
+library("tabularaster")
+library("knitr")
+
+knitr::opts_chunk$set(include=F,warning = F,message = F,echo=F)
+
+vroom("valoriOsservatiPrevisti_tuttiDatiComeTRaining.csv",delim=";",col_names = TRUE)->dati
+
+dati %>%
+  mutate(pm10=exp(lpm10)) %>%
+  gather(key="stage",value="val",pm10,fitted)->gdati
+```
+
+Confronto fra dati osservati e i dati previsti (utilizzando tutti i dati di input come dati di training, quindi non si tratta della validazione del modello)
+
+
+```{r,fig.width=10,fig.height=10,include=TRUE}
+ggplot(data=gdati,aes(x=stage,y=val))+
+  geom_boxplot()+
+  facet_wrap(~mm,scales = "free_y")
+```
+
+```{r,include=TRUE}
+skim(gdati %>% dplyr::select(mm,stage,val) %>%group_by(mm,stage))
+```
+
+
+```{r}
+purrr::map(1:12,.f=function(MESE){
+  
+  brick(glue::glue("../esposizionePopolazione/exp_pm10_mese{MESE}.nc"))->mybrick
+  as_tibble(mybrick)%>% filter(!is.na(cellvalue))->xx
+  
+  xx$mm<-MESE
+
+  xx
+  
+}) %>% purrr::reduce(.,.f=bind_rows)->valoriRaster
+```
+
+Distribuzione dei dati previsti su tutta l'Italia (quindi dati ricavati dalle mappe raster)
+
+
+```{r,include=TRUE}
+skim(valoriRaster %>% dplyr::select(mm,cellvalue)%>% group_by(mm))
+```  
+
+```{r,include=TRUE}
+ggplot(data=valoriRaster,aes(x=as.character(mm),y=cellvalue))+
+  geom_boxplot()
+```
