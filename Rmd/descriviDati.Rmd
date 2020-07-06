@@ -35,6 +35,29 @@ ggplot(data=gdati,aes(x=stage,y=val))+
 skim(gdati %>% dplyr::select(mm,stage,val) %>%group_by(mm,stage))
 ```
 
+## Distribuzione dei valori medi per centralina
+
+```{r,include=TRUE}
+gdati %>% group_by(id_centralina,stage) %>%summarise(stat=mean(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
+```
+
+## Distribuzione dei valori medi per centralina
+
+```{r,include=TRUE}
+gdati %>% group_by(id_centralina,stage) %>%summarise(stat=mean(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
+```
+
+## Distribuzione dei valori massimi per centralina
+
+```{r,include=TRUE}
+gdati %>% group_by(id_centralina,stage) %>%summarise(stat=max(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
+```
+
+## Distribuzione dei valori mediani per centralina
+
+```{r,include=TRUE}
+gdati %>% group_by(id_centralina,stage) %>%summarise(stat=median(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
+```
 
 ```{r}
 purrr::map(1:12,.f=function(MESE){
