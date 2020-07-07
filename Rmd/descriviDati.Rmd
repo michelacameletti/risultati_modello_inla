@@ -41,10 +41,10 @@ skim(gdati %>% dplyr::select(mm,stage,val) %>%group_by(mm,stage))
 gdati %>% group_by(id_centralina,stage) %>%summarise(stat=mean(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
 ```
 
-## Distribuzione dei valori medi per centralina
+## Distribuzione dei valori minimi per centralina
 
 ```{r,include=TRUE}
-gdati %>% group_by(id_centralina,stage) %>%summarise(stat=mean(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
+gdati %>% group_by(id_centralina,stage) %>%summarise(stat=min(val,na.rm=TRUE)) %>% ungroup() %>% ggplot(data=.,aes(x=stage,y=stat))+geom_boxplot()
 ```
 
 ## Distribuzione dei valori massimi per centralina
