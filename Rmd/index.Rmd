@@ -71,3 +71,12 @@ Le palette dei colori delle mappe INLA sono quelli del package "scico".
 [Evento del 4 maggio](./evento_4maggio.html)
 
 [Evento dell'11 giugno](./evento_11giugno.html)
+
+
+## Esposizione della popolazione (valori per regione)
+
+[Valori di esposizione rispetto alla mediana](./MedianaEsposizioneRegionali.html)
+
+[Valori di esposizione rispetto al percentile 90.4](./Percentile90.4EsposizioneRegionali.html)
+
+[Valori di esposizione rispetto al percentile 99.2](./Percentile99.2EsposizioneRegionali.html)
