@@ -1,0 +1,135 @@
+---
+title: Esposizione della popolazione rispetto al percentile 99.2
+date:: "`r lubridate::date()`"
+output: html_document
+---
+
+```{r intro,warning=FALSE,message=FALSE,echo=FALSE}
+#Calcolo esposizione popolazione
+rm(list=objects())
+library("raster")
+library("tabularaster")
+library("tidyverse")
+library("ggspatial")
+library("scico")
+library("RPostgreSQL")
+library("rpostgis")
+library("patchwork")
+library("sf")
+library("gt")
+
+#trasformo i valori di pm10 del raster in classi
+trasformaInClassi<-function(x){
+  
+  x[x<=20]<-20
+  x[x>20 & x<=30]<-30
+  x[x>30 & x<=40]<-40
+  x[x>40 & x<=50]<-50
+  x[x>50]<-100
+  
+  x
+  
+}#fine trasformaInClassi
+
+st_read("../zonizzazione/","ZONE NO2 PM10 PM2_5")->ITALIA
+st_transform(ITALIA,crs=32632)->ITALIA
+
+
+dbDriver("PostgreSQL")->mydrv
+dbConnect(drv = mydrv,dbname="asiispra",user="guido",password="guidofioravanti",port=5432,host="localhost")->mycon
+rpostgis::pgGetRast(mycon,name=c("rgriglia","popistat"))->popolazione
+dbDisconnect(mycon)
+
+raster("../zonizzazione/rzone.tif")->regioni
+raster("PERCENTILE99_2.nc")->myRaster
+
+#categorical raster
+trasformaInClassi(x=myRaster)->catRaster
+
+c(20,30,40,50,100)->classi
+c("(0-20]","(20-30]","(30-40]","(40-50]",">50")->classiLabels
+
+#trasformo il raster delpm10 in un tibble
+as_tibble(catRaster,cell=TRUE,value=TRUE,xy=TRUE) %>%
+  rename(pm10=cellvalue) %>%
+  mutate(pm10=factor(pm10,levels=classi,labels=classiLabels,ordered=TRUE))->dfPM10
+
+
+tabularaster::as_tibble(popolazione,cell=TRUE,value=TRUE,xy=TRUE) %>%
+  rename(popolazione=cellvalue)->dfPop
+
+tabularaster::as_tibble(regioni,cell=TRUE,value=TRUE,xy=TRUE) %>%
+  rename(regioni=cellvalue) %>%
+  mutate(regioni=factor(regioni,levels =sort(unique(regioni)),ordered = TRUE,labels =sort(unique(regioni))))->dfRegioni
+
+full_join(dfPM10,dfRegioni %>% dplyr::select(cellindex,regioni))->dfPM10Reg         
+full_join(dfPM10Reg,dfPop %>% dplyr::select(cellindex,popolazione))->dfPM10RegPopolazione 
+#rm(dfPM10)
+rm(dfPM10Reg)
+
+#per ora tengo anche i valori NA per avere un'idea della percentuale di popolazione che perdo dal calcolo 
+#a causa di un non perfetto allineamento dei rasters
+dfPM10RegPopolazione %>%
+#  filter(!is.na(regioni) & !is.na(pm10)) %>% 
+  group_by(regioni,pm10) %>%
+  summarise(esposizione=sum(popolazione,na.rm=TRUE)) %>%
+  ungroup()->finale
+
+sum(finale$esposizione)->POP
+
+round((finale$esposizione/POP)*100,2)->finale$esposizionePerc
+#datiPerTabella servono per gt
+finale->datiPerTabella
+#recupero le coordinate
+left_join(finale,dfPM10RegPopolazione)->finale
+#creo il raster
+rasterFromXYZ(finale[,c("x","y","esposizione")])->finaleRaster
+mask(finaleRaster,myRaster)->finaleRaster
+
+crs(finaleRaster)<-CRS("+init=epsg:32632")
+
+ggplot()+
+  layer_spatial(data=finaleRaster)+
+  geom_sf(data=ITALIA,fill="transparent",colour="#333333",linewidth=0.5)+
+  scale_fill_scico(palette="nuuk",na.value="transparent",name="Popolazione")+
+  theme_void()->graficoEsposizione
+
+ggplot()+
+  geom_tile(data=dfPM10,aes(fill=pm10,x=x,y=y))+
+  geom_sf(data=ITALIA,fill="transparent",colour="#333333",linewidth=0.5)+
+  scale_fill_scico_d(palette="nuuk",na.value="transparent")+
+  theme_void()->graficoClassi
+```
+
+I grafici e le tabelle che seguono sono stati ottenuti sommando la popolazione appartenente a ciascuna classe di livello di PM10 per zona. 
+
+```{r graficoEsposizione}
+graficoClassi+graficoEsposizione
+```
+
+```{r,include=FALSE,warning=FALSE,message=FALSE,echo=FALSE}
+datiPerTabella %>%
+  dplyr::select(-esposizionePerc) %>%
+  spread(key=pm10,value=esposizione)->datiPerTabella2
+```
+
+## Tabella esposizione popolazione (in termini assoluti)
+
+La colonna NA deriva dal fatto che i raster del PM10, della popolazione e delle regioni non hanno perfettamente la stessa dimensione, per cui alcuni pixel si perdono. Ma corrisponde a circa all'1% della popolazione nazionale.
+
+```{r tabellaDati}
+gt(data=datiPerTabella2,rowname_col = "regioni")
+```
+
+
+```{r,include=FALSE,warning=FALSE,message=FALSE,echo=FALSE}
+datiPerTabella %>%
+  dplyr::select(-esposizione) %>%
+  spread(key=pm10,value=esposizionePerc)->datiPerTabella2
+```
+
+## Tabella esposizione popolazione (in percentuale rispetto alla popolazione italiana)
+
+```{r tabellaDatiPercentuali}
+gt(data=datiPerTabella2,rowname_col = "regioni")
+```

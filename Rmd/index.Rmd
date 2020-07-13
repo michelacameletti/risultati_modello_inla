@@ -80,3 +80,11 @@ Le palette dei colori delle mappe INLA sono quelli del package "scico".
 [Valori di esposizione rispetto al percentile 90.4](./Percentile90.4EsposizioneRegionali.html)
 
 [Valori di esposizione rispetto al percentile 99.2](./Percentile99.2EsposizioneRegionali.html)
+
+## Esposizione della popolazione (valori per zona)
+
+[Valori di esposizione rispetto alla mediana](./MedianaEsposizioneZone.html)
+
+[Valori di esposizione rispetto al percentile 90.4](./Percentile90.4EsposizioneZone.html)
+
+[Valori di esposizione rispetto al percentile 99.2](./Percentile99.2EsposizioneZone.html)
