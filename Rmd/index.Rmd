@@ -72,6 +72,9 @@ Le palette dei colori delle mappe INLA sono quelli del package "scico".
 
 [Evento dell'11 giugno](./evento_11giugno.html)
 
+## Mappa probabilita' di superamento (PM10 > 50 microgrammi)
+
+[Esempio mappa del 26 gennaio](./mosaic.html)
 
 ## Esposizione della popolazione (valori per regione)
 

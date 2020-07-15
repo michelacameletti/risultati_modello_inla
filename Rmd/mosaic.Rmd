@@ -1,0 +1,44 @@
+---
+title: Probabilita' di superamento del valore di 50 microgrammi (26 gennaio 2015)
+date: "`r lubridate::today()`"
+output: html_document
+---
+
+```{r intro,warning=FALSE,message=FALSE,echo=FALSE,include=FALSE}
+rm(list=objects())
+library("raster")
+library("tidyverse")
+library("ggspatial")
+library("scico")
+library("knitr")
+library("patchwork")
+
+list.files(pattern="^.+\\.tif$")->ffile
+
+purrr::map(ffile,.f=~(raster(.)))->listaOut
+purrr::reduce(listaOut,.f=mosaic,fun=max)->finale
+
+
+brick("/home/guido/modello_settembre_2019/predittori/modello_annuale_per_stime_covariate_spde_italia_con_iid/exp_pm10_mese1.tif")->mybrick
+
+subset(mybrick,26)->mappaPM10
+
+ggplot()+
+layer_spatial(data=finale)+
+scale_fill_scico(na.value="transparent",palette="broc",name="Prob > 50")+
+theme_void()->graficoProb
+
+ggplot()+
+layer_spatial(data=mappaPM10)+
+scale_fill_scico(na.value="transparent",palette="broc",name="PM10")+
+theme_void()->graficoPM10
+```
+
+Probabilita' di superamento ottenuta mediante inla.posterior.sample.
+
+```{r,warning=FALSE,message=FALSE,echo=FALSE}
+graficoPM10+graficoProb
+```
+
+
+
