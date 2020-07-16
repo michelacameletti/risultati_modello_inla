@@ -1,0 +1,35 @@
+---
+title: Confronto risultati con diverse priors
+date: "`r lubridate::today()`"
+output: html_document
+--- 
+
+Come cambiano i risultati del modello cambiando le priors?
+
+![](./fingers.jpeg)
+
+```{r,echo=FALSE,message=FALSE,warning=FALSE}  
+rm(list = objects())
+library("tidyverse")
+library("dataCompareR")
+
+read_delim("hyperparametri.csv",delim=";",col_names = TRUE)->datiNew
+read_delim("../hyperparametri_22giugno/hyperparametri.csv",delim=";",col_names=TRUE)->datiOld
+```
+
+### Risultato del confronto degli iperparametri
+
+```{r,warning=FALSE,message=FALSE,echo=FALSE}
+rCompare(datiNew,datiOld,keys = c("parametri","mm"),roundDigits = 3)
+```
+
+### Confronto delle stime degli effetti fissi
+
+```{r effettiFisso,echo=FALSE,message=FALSE,warning=FALSE}
+read_delim("effettiFissi.csv",delim=";",col_names = TRUE)->datiNew
+read_delim("../ggridges_4giugno2020/risultati_4giugno_stime_definitive_covariate/effettiFissi.csv",delim=";",col_names=TRUE)->datiOld
+```
+
+```{r,warning=FALSE,message=FALSE,echo=FALSE}
+rCompare(datiNew,datiOld,keys = c("covariate","mm"),roundDigits = 3)
+```
