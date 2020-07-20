@@ -140,6 +140,14 @@ subDati %>%
 ### Descrizione dei valori di PM10
 
 ```{r}
+skimr::skim(subDati %>% dplyr::select(pm10))
+```
+
+```{r}
+skimr::skim(subDati %>% dplyr::select(pm10,mm) %>% group_by(mm))
+```
+
+```{r}
 skimr::skim(subDati %>% dplyr::select(pm10,tipo_new) %>%group_by(tipo_new))
 ```
 
@@ -158,6 +166,19 @@ ggplot(data=subDati)+
   geom_boxplot(aes(x=mese,y=pm10))+
   facet_wrap(~tipo_new)+
   theme_bw()
+```
+
+### Distribuzione dei dati per centralina
+
+```{r}
+subDati %>%
+  group_by(id_centralina) %>%
+  summarize(media=mean(pm10,na.rm=TRUE)) %>%
+  ungroup()->valoriMedi
+```
+
+```{r}
+skimr::skim(valoriMedi$media)
 ```
 
 ### Quanti dati (non NA) sono disponibili per stazione?
