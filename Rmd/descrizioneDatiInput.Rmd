@@ -173,7 +173,7 @@ ggplot(data=subDati)+
 
 ```{r,fig.width=10}
 ggplot(data=subDati)+
-  geom_boxplot(aes(x=season,y=pm10))+
+  geom_boxplot(aes(x=as.character(season),y=pm10))+
   theme_bw()
 ```
 
