@@ -148,10 +148,13 @@ skimr::skim(subDati %>% dplyr::select(pm10,mm) %>% group_by(mm))
 ```
 
 ```{r}
-skimr::skim(subDati %>% mutate(season=case_when(mm %in% c(1,2,12)~1,
+
+subDati %>% mutate(season=case_when(mm %in% c(1,2,12)~1,
                                             mm %in% c(3,4,5)~2,
                                             mm %in% c(6,7,8)~3,
-                                            TRUE~4))%>% dplyr::select(pm10,season) %>% group_by(season))
+                                            TRUE~4))->subDati
+
+skimr::skim( subDati %>% dplyr::select(pm10,season) %>% group_by(season))
 ```
 
 ```{r}
@@ -163,6 +166,14 @@ skimr::skim(subDati %>% dplyr::select(pm10,tipo_new) %>%group_by(tipo_new))
 ```{r,fig.width=10}
 ggplot(data=subDati)+
   geom_boxplot(aes(x=mese,y=pm10))+
+  theme_bw()
+```
+
+### Distribuzione stagionale dei valori di PM10
+
+```{r,fig.width=10}
+ggplot(data=subDati)+
+  geom_boxplot(aes(x=season,y=pm10))+
   theme_bw()
 ```
 
