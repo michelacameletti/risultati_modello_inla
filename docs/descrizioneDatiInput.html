@@ -377,7 +377,7 @@ summary {
 <pre><code>## 
 ## Skim summary statistics
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##        variable missing complete   n   mean     sd p0 p25  p50   p75 p100
 ##  dfUniche$q_dem       0      410 410 181.97 243.06 -3  27 85.5 252.5 1705
 ##      hist
@@ -465,7 +465,7 @@ summary {
 ##  n variables: 2 
 ##  group variables: tipo_new 
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##  tipo_new variable missing complete   n   mean     sd p0  p25   p50    p75 p100
 ##     rural    q_dem       0       62  62 348.48 416.06 -3 16.5 170.5 584    1705
 ##  suburban    q_dem       0      104 104 155.19 178.35  0 28.5  88   235.25  899
@@ -481,7 +481,7 @@ summary {
 ##  n obs: 149650 
 ##  n variables: 1 
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##  variable missing complete      n mean    sd p0   p25   p50   p75   p100
 ##      pm10    7081   142569 149650   27 18.59  1 15.02 22.29 33.05 337.29
 ##      hist
@@ -491,7 +491,7 @@ summary {
 ##  n variables: 2 
 ##  group variables: mm 
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##  mm variable missing complete     n  mean    sd p0   p25   p50   p75   p100
 ##   1     pm10     654    12056 12710 34.97 23.93  1 17.3  28.87 47.11 211.67
 ##   2     pm10     635    10845 11480 31.36 23.86  1 14.91 25.03 39.74 180.95
@@ -521,9 +521,25 @@ summary {
 <pre><code>## Skim summary statistics
 ##  n obs: 149650 
 ##  n variables: 2 
+##  group variables: season 
+## 
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
+##  season variable missing complete     n  mean    sd p0   p25   p50   p75   p100
+##       1     pm10    1770    35130 36900 38.13 26.23  1 18.83 31.6  51.28 337.29
+##       2     pm10    1725    35995 37720 23.31 13.35  1 14.11 20.64 29.38 137.74
+##       3     pm10    1906    35814 37720 21.78  9.28  1 15.27 20.92 27.16 196.24
+##       4     pm10    1680    35630 37310 25    16.46  1 13.56 20.37 32.02 165.48
+##      hist
+##  ▇▃▁▁▁▁▁▁
+##  ▇▇▂▁▁▁▁▁
+##  ▇▃▁▁▁▁▁▁
+##  ▇▅▂▁▁▁▁▁</code></pre>
+<pre><code>## Skim summary statistics
+##  n obs: 149650 
+##  n variables: 2 
 ##  group variables: tipo_new 
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##  tipo_new variable missing complete     n  mean    sd p0   p25   p50   p75
 ##     rural     pm10    1102    21528 22630 21.7  16.43  1 10.98 17.38 27.33
 ##  suburban     pm10    2044    35916 37960 26.99 18.09  1 15.39 22.41 32.9 
@@ -546,7 +562,7 @@ summary {
 <pre><code>## 
 ## Skim summary statistics
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##          variable missing complete   n  mean   sd   p0   p25   p50   p75  p100
 ##  valoriMedi$media       0      410 410 26.99 8.03 5.58 21.35 26.33 32.76 56.09
 ##      hist
@@ -559,7 +575,7 @@ summary {
 ##  n variables: 3 
 ##  group variables: mese 
 ## 
-## ── Variable type:character ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ────────────────────────────────────────────────────────────────────────────────────────────
 ##  mese      variable missing complete   n min max empty n_unique
 ##   Jan id_centralina       0      410 410  34  47     0      410
 ##   Feb id_centralina       0      410 410  34  47     0      410
@@ -574,7 +590,7 @@ summary {
 ##   Nov id_centralina       0      410 410  34  47     0      410
 ##   Dec id_centralina       0      410 410  34  47     0      410
 ## 
-## ── Variable type:integer ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:integer ──────────────────────────────────────────────────────────────────────────────────────────────
 ##  mese         variable missing complete   n  mean   sd p0 p25 p50 p75 p100
 ##   Jan numeroDatiValidi       0      410 410 29.4  2.76 13  29  31  31   31
 ##   Feb numeroDatiValidi       0      410 410 26.45 2.57 11  26  28  28   28
@@ -609,7 +625,7 @@ summary {
 ##  n variables: 5 
 ##  group variables: cod_reg 
 ## 
-## ── Variable type:character ──────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:character ────────────────────────────────────────────────────────────────────────────────────────────
 ##  cod_reg       variable missing complete    n min max empty n_unique
 ##        1       cod_reg0       0     1190 1190   1   1     0        1
 ##        1  id_centralina       0     1190 1190  34  35     0       35
@@ -672,7 +688,7 @@ summary {
 ##       20  id_centralina       0      870  870  34  34     0       30
 ##       20 id_centralina0       0      870  870  34  34     0       30
 ## 
-## ── Variable type:numeric ────────────────────────────────────────────────────────────────────────────────────────────────────────────
+## ── Variable type:numeric ──────────────────────────────────────────────────────────────────────────────────────────────
 ##  cod_reg variable missing complete    n   mean    sd    p0   p25    p50    p75
 ##        1 distanze       0     1190 1190  77.47 40.69  1.41 49.09  73.41 104.71
 ##        2 distanze       0        2    2  37.58  0    37.58 37.58  37.58  37.58
@@ -719,7 +735,7 @@ summary {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bfcimuahrh .gt_table {
+#yuzdanokbj .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -742,7 +758,7 @@ summary {
   border-left-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_heading {
+#yuzdanokbj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -754,7 +770,7 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_title {
+#yuzdanokbj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -764,7 +780,7 @@ summary {
   border-bottom-width: 0;
 }
 
-#bfcimuahrh .gt_subtitle {
+#yuzdanokbj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -774,13 +790,13 @@ summary {
   border-top-width: 0;
 }
 
-#bfcimuahrh .gt_bottom_border {
+#yuzdanokbj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_col_headings {
+#yuzdanokbj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -795,7 +811,7 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_col_heading {
+#yuzdanokbj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -815,7 +831,7 @@ summary {
   overflow-x: hidden;
 }
 
-#bfcimuahrh .gt_column_spanner_outer {
+#yuzdanokbj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -827,15 +843,15 @@ summary {
   padding-right: 4px;
 }
 
-#bfcimuahrh .gt_column_spanner_outer:first-child {
+#yuzdanokbj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bfcimuahrh .gt_column_spanner_outer:last-child {
+#yuzdanokbj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bfcimuahrh .gt_column_spanner {
+#yuzdanokbj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -847,7 +863,7 @@ summary {
   width: 100%;
 }
 
-#bfcimuahrh .gt_group_heading {
+#yuzdanokbj .gt_group_heading {
   padding: 8px;
   color: #333333;
   background-color: #FFFFFF;
@@ -869,7 +885,7 @@ summary {
   vertical-align: middle;
 }
 
-#bfcimuahrh .gt_empty_group_heading {
+#yuzdanokbj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -884,19 +900,19 @@ summary {
   vertical-align: middle;
 }
 
-#bfcimuahrh .gt_striped {
+#yuzdanokbj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bfcimuahrh .gt_from_md > :first-child {
+#yuzdanokbj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bfcimuahrh .gt_from_md > :last-child {
+#yuzdanokbj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bfcimuahrh .gt_row {
+#yuzdanokbj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -915,7 +931,7 @@ summary {
   overflow-x: hidden;
 }
 
-#bfcimuahrh .gt_stub {
+#yuzdanokbj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -927,7 +943,7 @@ summary {
   padding-left: 12px;
 }
 
-#bfcimuahrh .gt_summary_row {
+#yuzdanokbj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -937,7 +953,7 @@ summary {
   padding-right: 5px;
 }
 
-#bfcimuahrh .gt_first_summary_row {
+#yuzdanokbj .gt_first_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -947,7 +963,7 @@ summary {
   border-top-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_grand_summary_row {
+#yuzdanokbj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -957,7 +973,7 @@ summary {
   padding-right: 5px;
 }
 
-#bfcimuahrh .gt_first_grand_summary_row {
+#yuzdanokbj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -967,7 +983,7 @@ summary {
   border-top-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_table_body {
+#yuzdanokbj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -976,7 +992,7 @@ summary {
   border-bottom-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_footnotes {
+#yuzdanokbj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -990,13 +1006,13 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_footnote {
+#yuzdanokbj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding: 4px;
 }
 
-#bfcimuahrh .gt_sourcenotes {
+#yuzdanokbj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1010,46 +1026,46 @@ summary {
   border-right-color: #D3D3D3;
 }
 
-#bfcimuahrh .gt_sourcenote {
+#yuzdanokbj .gt_sourcenote {
   font-size: 90%;
   padding: 4px;
 }
 
-#bfcimuahrh .gt_left {
+#yuzdanokbj .gt_left {
   text-align: left;
 }
 
-#bfcimuahrh .gt_center {
+#yuzdanokbj .gt_center {
   text-align: center;
 }
 
-#bfcimuahrh .gt_right {
+#yuzdanokbj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bfcimuahrh .gt_font_normal {
+#yuzdanokbj .gt_font_normal {
   font-weight: normal;
 }
 
-#bfcimuahrh .gt_font_bold {
+#yuzdanokbj .gt_font_bold {
   font-weight: bold;
 }
 
-#bfcimuahrh .gt_font_italic {
+#yuzdanokbj .gt_font_italic {
   font-style: italic;
 }
 
-#bfcimuahrh .gt_super {
+#yuzdanokbj .gt_super {
   font-size: 65%;
 }
 
-#bfcimuahrh .gt_footnote_marks {
+#yuzdanokbj .gt_footnote_marks {
   font-style: italic;
   font-size: 65%;
 }
 </style>
-<div id="bfcimuahrh" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
+<div id="yuzdanokbj" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;"><table class="gt_table">
   <thead class="gt_header">
     <tr>
       <th colspan="3" class="gt_heading gt_title gt_font_normal" style>Numero stazioni per tipologia centralina e stage analisi (training/validation)</th>

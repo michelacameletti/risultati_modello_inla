@@ -148,6 +148,13 @@ skimr::skim(subDati %>% dplyr::select(pm10,mm) %>% group_by(mm))
 ```
 
 ```{r}
+skimr::skim(subDati %>% mutate(season=case_when(mm %in% c(1,2,12)~1,
+                                            mm %in% c(3,4,5)~2,
+                                            mm %in% c(6,7,8)~3,
+                                            TRUE~4))%>% dplyr::select(pm10,season) %>% group_by(season))
+```
+
+```{r}
 skimr::skim(subDati %>% dplyr::select(pm10,tipo_new) %>%group_by(tipo_new))
 ```
 
