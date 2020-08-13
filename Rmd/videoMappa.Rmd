@@ -1,70 +1,9 @@
----
-title: Time after time (gif)
-date: "`r lubridate::today()`"
-author: Anonymous
-params:
-  MESE: 1
+# Time after time (gif)
+
 ---
 
-```{r intro,include=FALSE,warning=FALSE,message=FALSE,echo=FALSE}
-#10 giugno
-library("tidyverse")
-library("INLA")
-library("inlabru")
-library("sf")
-library("gganimate")
-library("gifski")
-library("raster")
-options(warn=-2,error=recover)
+![](./video1.gif)
 
-MESE<-1
+----
 
-nomeBrick<-glue::glue("exp_pm10_mese{MESE}.tif")
-
-brick(nomeBrick)->mybrick
-
-nlayers(mybrick)->numeroLayers
-indiceSubsetI<-1
-
-#ogni brick inizia con i primi due giorni del mese precedente, tranne Gennaio
-if(MESE!=1){indiceSubsetI<-3}
-
-raster::subset(mybrick,subset=seq(indiceSubsetI,numeroLayers))->brickMese
-as.data.frame(brickMese,xy=TRUE,na.rm=F)->dfGiorni
-
-dfGiorni %>%
-  gather(key="layer",value="pm10",-x,-y) %>%
-  separate(layer,into=c("label","banda"),sep="\\.") %>%
-  dplyr::select(x,y,banda,pm10)->dfGiorni
-
-dfGiorni %>%
-  mutate(banda=as.integer(banda))->dfGiorni
-
-  ggplot(data=dfGiorni,aes(x=x,y=y,group=banda))+
-    geom_raster(aes(fill=pm10))+
-    transition_manual(banda)+
-    view_follow()+
-    #gg(mesh,edge.color = "#33333322",lwd=0.001)+
-    #geom_sf(data=sfStazioni,fill="firebrick",pch=21)+
-    scale_fill_viridis_c(na.value = "transparent")+
-    #labs(title="Giorno: {currante_frame} gennaio")+
-    theme_void()->animazione
-```  
-  
-##  `r month.name[as.integer(MESE)]` 2015
-
-- Il primo giorno dell'anno non ha a disposizione il dato della precipitazione del giorno precedente, quindi apparira' come una mappa di tutti NA.
-
-- La mappa raffigura la penisola italiana, la Sicilia e la Sardegna. Sono state eliminate tutte le isolette (suggerimento di Sara)
-
-- Le mappe sono state costruite partendo dal valore su scala logaritmica, convertito su scala esponenziale mediante la formula della lognormale: $\exp^{\eta+0.5*\sigma^2}$
-  
-```{r}
-gganimate::animate(animazione,duration=60,width=640,height=768,renderer=gifski_renderer())
-```
-
-```{r,include=FALSE,warning=FALSE,message=FALSE,echo=FALSE,eval=FALSE}
-gganimate::anim_save(stringr::str_replace(nomeBrick,"tif","gif"),animazione)
-```
-
-
+![](./video7.gif)

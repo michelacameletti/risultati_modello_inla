@@ -60,11 +60,11 @@ In questa pagina viene riportata la distribuzione dei valori previsti interpolat
 - *Verificare quali di questi scores coincidono con quelli dell'articolo di Michela*
 - *Gli scores sono stati calcolati distinguendo tra training e validation dataset?*
 
-## Esempio di file gif per il mese di Gennaio
+## Esempio di file gif per il mese di Gennaio e Luglio 2015
 
-[Filmato dell'andamento giornaliero del PM10](./videoMappa.html). Attenzione: nel file gif la scala rimane sempre fissa al massimo valore osservato (risolvere questo problema!). Il mese si chiude con un evento di dust visibile in Sicilia.
+[Filmato dell'andamento giornaliero del PM10](./videoMappa.html).
 
-## INdipendenza dei residui
+## Indipendenza dei residui
 
 [Variogrammi spazio temporali](./disegnaVariogramma.html)
 
