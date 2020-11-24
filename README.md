@@ -17,7 +17,7 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 - Concerning the choice of predictors one could also use of gridded PM emissions instead of imperviousness or modelled PM10/2.5 distributions the CAMS regional air quality service or a single CTM. Could you add a little discussion on potential further options to improve the predictor set? Now there are few lines on it.
 
-List of small suggestions:
+## List of small suggestions:
 
 -Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5.
 
