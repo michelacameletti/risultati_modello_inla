@@ -1,2 +1,3 @@
-# risultati_modello_inla
-Risultati per il modello del pm10
+# Risultati modello INLA
+
+Risultati per il modello del PM10
