@@ -19,7 +19,7 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 ## List of small suggestions:
 
--Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5.
+- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5.
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
