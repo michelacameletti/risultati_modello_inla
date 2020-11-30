@@ -60,3 +60,6 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now
 
 - Figure 6: it would be nice to know which stations are shown and where they are located.  Please adjust the range of the scale
+
+- FIgura 7 e 8 [SARA] cambiare la scala della mappa per la varianza
+
