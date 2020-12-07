@@ -55,7 +55,6 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 - Line 443: the method for population exposure could go up
 
-- Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read.
 
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now
 
@@ -65,6 +64,11 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 
 ### Figure
+
+- Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read.
+
+  - [figura articolo](./figure_originali/) e e [figura con nuovi titoli covariate](./figure_originali/)
+  
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
 
