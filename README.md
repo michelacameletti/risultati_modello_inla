@@ -68,6 +68,6 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
 
-  - January 26: [figura articolo](./figure_originali/giornaliera21LuglioRocv_palettabilbao.png) e [figura con nuova scala]()
+  - January 26: [figura articolo](./figure_originali/giornaliera21LuglioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera21LuglioRocv_palettabilbao.png)
 
 
