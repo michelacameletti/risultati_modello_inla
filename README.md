@@ -58,7 +58,6 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now
 
-- Figure 6: it would be nice to know which stations are shown and where they are located.  Please adjust the range of the scale
 
 ## Revisioni
 
@@ -68,6 +67,10 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read.
 
   - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
+  
+- Figure 6: **it would be nice to know which stations are shown and where they are locateda- DA FARE**.  Please adjust the range of the scale
+ 
+    - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) e e [figura con nuovi titoli covariate](./nuove_figure/graficiSerieValidazione_urbanJanuary.png)
   
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
