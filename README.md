@@ -67,7 +67,7 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read.
 
-  - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./figure_originali/ggRidgePatchwork.png)
+  - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
   
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
