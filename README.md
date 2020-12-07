@@ -70,5 +70,5 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
   - January 26: [figura articolo](./figure_originali/giornaliera26GennaioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera26GennaioRocv_palettabilbao.png)
 
-- July 21: [figura articolo](./figure_originali/giornaliera21LuglioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera21LuglioRocv_palettabilbao.png)
+  - July 21: [figura articolo](./figure_originali/giornaliera21LuglioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera21LuglioRocv_palettabilbao.png)
 
