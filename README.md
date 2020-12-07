@@ -63,7 +63,7 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 ## Revisioni
 
 
-### Figure
+### Section on validation:
 
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read.
 
