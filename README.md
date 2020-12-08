@@ -70,8 +70,14 @@ Did you include al types of stations? Especially traffic/industrial are impacted
   
 - Figure 6: **it would be nice to know which stations are shown and where they are locateda- Aggiungere nella caption i nomi delle stazioni/localit delle stazioni e i codici EU?**.  Please adjust the range of the scale
  
-    - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) e e [figura con nuovi titoli covariate](./nuove_figure/graficiSerieValidazione_urbanJanuary.png)
-  
+    - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) 
+    
+    - [figura con nuovo asse y e posizione stazione: stazione urban](./nuove_figure/graficiSerieValidazione_urbanJanuary.png)
+
+    - [figura con nuovo asse y e posizione stazione: stazione suburban](./nuove_figure/graficiSerieValidazione_suburbanJanuary.png)
+    
+    - [figura con nuovo asse y e posizione stazione: stazione rural](./nuove_figure/graficiSerieValidazione_ruralJanuary.png)
+
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
 
