@@ -51,10 +51,9 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 *the first lines reflect the methodology. Could you integrate that to the method section? Until this point, I was wondering whether you performed an evaluation on a subset of the data. How did you select the 10 % validation set?*
 
-- Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)?
+- Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? **GIORGIO**
 
 - Line 443: the method for population exposure could go up
-
 
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now
 
