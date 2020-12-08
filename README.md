@@ -64,7 +64,7 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 ### Section on validation:
 
-- Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read.
+- Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. **Aggiungere tra parentesi la sigla del parametro o no?**
 
   - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
   
