@@ -74,9 +74,9 @@ Did you include al types of stations? Especially traffic/industrial are impacted
     
     - [figura con nuovo asse y e posizione stazione: stazione urban](./nuove_figure/graficiSerieValidazione_urbanJanuary.png)
 
-    - [figura con nuovo asse y e posizione stazione: stazione suburban](./nuove_figure/graficiSerieValidazione_suburbanJanuary.png)
+    - [figura con posizione stazione: stazione suburban](./nuove_figure/graficiSerieValidazione_suburbanJanuary.png)
     
-    - [figura con nuovo asse y e posizione stazione: stazione rural](./nuove_figure/graficiSerieValidazione_ruralJanuary.png)
+    - [figura con posizione stazione: stazione rural](./nuove_figure/graficiSerieValidazione_ruralJanuary.png)
 
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
