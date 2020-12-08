@@ -68,7 +68,7 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
   - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
   
-- Figure 6: **it would be nice to know which stations are shown and where they are locateda- DA FARE**.  Please adjust the range of the scale
+- Figure 6: **it would be nice to know which stations are shown and where they are locateda- Aggiungere nella caption i nomi delle stazioni/localit delle stazioni e i codici EU?**.  Please adjust the range of the scale
  
     - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) e e [figura con nuovi titoli covariate](./nuove_figure/graficiSerieValidazione_urbanJanuary.png)
   
