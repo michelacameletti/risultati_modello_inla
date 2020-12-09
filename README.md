@@ -17,6 +17,9 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 - Concerning the choice of predictors one could also use of gridded PM emissions instead of imperviousness or modelled PM10/2.5 distributions the CAMS regional air quality service or a single CTM. Could you add a little discussion on potential further options to improve the predictor set? Now there are few lines on it.
 
+
+## List of small suggestions:
+
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
 "Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term.
@@ -75,7 +78,10 @@ We have modified this sentence
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now
 
 
-## Revisioni
+# Revisioni
+
+
+### List of small suggestions:
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
