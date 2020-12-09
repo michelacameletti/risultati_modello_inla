@@ -45,6 +45,8 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
+We have modified this sentence
+
 - Line 163: How do these high values impact the results? Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
 - Line 266-269 belongs to the methodology section above
