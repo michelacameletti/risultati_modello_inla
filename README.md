@@ -23,6 +23,8 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
+"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term.
+
 - Line 76: this is not a start of a new paragraph
 
 We have modified this.
