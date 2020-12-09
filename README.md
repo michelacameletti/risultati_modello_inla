@@ -99,9 +99,12 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 **Guido: ho spostato il paragrafo "*population exposure*" prima delle "exceedence probability maps*" (con il risultato di avere ora le figure nel pdf incasinate :-) ), Non sono sicuro di cosa volesse il reviewer con questo commento!**
 
-- Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. **Aggiungere tra parentesi la sigla del parametro o no?**
+- Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. 
 
   - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
+  
+ **Guido: ho modificato il grafico mettendo il nome per esteso di ogni singola variabile. Aggiungere alla fine di ogni variabile anche la sigla del parametro 
+ tra parentesi? Esempio: Surface Pressure (sp)** 
   
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now 
 
@@ -120,6 +123,8 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
+
+**Guido: Le figure sono state modificate**
 
   - January 26 (giornaliera): [figura articolo](./figure_originali/giornaliera26GennaioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera26GennaioRocv_palettabilbao.png)
 
