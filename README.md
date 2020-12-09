@@ -26,7 +26,7 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 Papers di AtmosphericEnvironment che parlano di "frequentist" e "bayesian" statistics:
 
-*OX and PM10 Bayesian concentration estimates using high-resolution numerical simulations and ground measurements over Paris, France,
+*NOX and PM10 Bayesian concentration estimates using high-resolution numerical simulations and ground measurements over Paris, France,
 Atmospheric Environment: X,Volume 3, 2019, 100038,mISSN 2590-1621, https://doi.org/10.1016/j.aeaoa.2019.100038.*
 
 *The Bayesian approach differs from the standard (“frequentist”) method for inference in its use of a prior distribution to express the uncertainty present before seeing the data, and to allow the uncertainty remaining after seeing the data to be expressed in the form of a posterior distribution.*
