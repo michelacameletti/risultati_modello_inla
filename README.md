@@ -51,10 +51,7 @@ Yes ISPRA is the acronym for the institute, so we have left it in the paper.
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
 You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
 
-- In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
 
-We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper. 
- 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
 We have modified this sentence
@@ -89,15 +86,11 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 *The Bayesian approach differs from the standard (“frequentist”) method for inference in its use of a prior distribution to express the uncertainty present before seeing the data, and to allow the uncertainty remaining after seeing the data to be expressed in the form of a posterior distribution.(pagina 289)*
 
+- In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
 
+**Sara**: We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper. 
 
-- Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
-
-"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term.
-
-*The Bayesian approach differs from the standard (“frequentist”) method for inference in its use of a prior distribution to express the uncertainty present before seeing the data, and to allow the uncertainty remaining after seeing the data to be expressed in the form of a posterior distribution.*
-
-
+**Giorgio ci fornisce il numero di stazioni di traffico, industriali etc in modo di poter dire al reviewr che noi utilizziamo solo la distinzione delle stazioni in base al tipo di area (urban, suburban, rural) ma fornirgli anche un numero di stazioni che sono industriali, di traffico etc **
 
 
 ### Section on validation:
