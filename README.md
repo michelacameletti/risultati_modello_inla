@@ -95,13 +95,17 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 ### Section on validation:
 
-- Line 443: the method for population exposure could go up <--- Guido: ho spostato il paragrafoc "*population exposure*" prima delle "exceedence probability maps*" (con il risultato di avere ora le figure nel pdf incasinate :-) ), Non sono sicuro di cosa volesse il reviewer con questo commento!
+- Line 443: the method for population exposure could go up
+
+**Guido: ho spostato il paragrafo "*population exposure*" prima delle "exceedence probability maps*" (con il risultato di avere ora le figure nel pdf incasinate :-) ), Non sono sicuro di cosa volesse il reviewer con questo commento!**
 
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. **Aggiungere tra parentesi la sigla del parametro o no?**
 
   - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
   
-- Figure 5: using a lower range would provide more contrast in the plots. They are very blue now <--- Guido: Il grafico ora rappresenta il log del conteggio dei punti in ciascun tassello esagonale, in modo di avere un range di valori piu' ristretto ed evitare "the blue effect".
+- Figure 5: using a lower range would provide more contrast in the plots. They are very blue now 
+
+**Guido: Il grafico ora rappresenta il log del conteggio dei punti in ciascun tassello esagonale, in modo di avere un range di valori piu' ristretto ed evitare "the blue effect".**
  
   
 - Figure 6: **it would be nice to know which stations are shown and where they are locateda- Aggiungere nella caption i nomi delle stazioni/localit delle stazioni e i codici EU?**.  Please adjust the range of the scale
