@@ -11,7 +11,8 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 - PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures? **Chiesto a Giorgio**
 
-- What is the impact of isolated stations in data sparse regions like in Sicily?
+- What is the impact of isolated stations in data sparse regions like in Sicily
+**Guido: The impact of the isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where there are more monitoring sites and higher (brown areas) otherwise. This is apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range called the Sicanian Mountains.**
 
 - I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
 
