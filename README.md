@@ -25,13 +25,19 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 - Line 76: this is not a start of a new paragraph
 
+We have modified this.
+
 - Lin 97-98: could you move the code availability to the methodology section?
 
 - Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"?
 
+Thanks for the suggestion, we have included this in the paper.
+
 - Line 129: does the gradient have an health impact? 😉 **Chiesto a Giorgio**
 
 - Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it.
+
+Yes ISPRA is the acronym for the institute, so we have left it in the paper.
 
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
 You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? In line 143 use the term "monitoring stations" (in stead of "measurements" are located)
