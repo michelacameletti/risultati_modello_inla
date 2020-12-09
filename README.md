@@ -42,9 +42,12 @@ Thanks for the suggestion, we have included this in the paper.
 Yes ISPRA is the acronym for the institute, so we have left it in the paper.
 
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
-You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? In line 143 use the term "monitoring stations" (in stead of "measurements" are located)
-Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
+You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
 
+- In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
+
+We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper. 
+ 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
 We have modified this sentence
