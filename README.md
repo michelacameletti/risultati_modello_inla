@@ -9,7 +9,7 @@ Risultati per il modello del PM10
 
 First of all, I would like to advise to structure the paper a bit further by grouping al methodology aspects in to the methods section. Now they are partly still in sections with results. Second, I have the following questions and suggestions:
 
-- PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures?
+- PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures? **Chiesto a Giorgio**
 
 - What is the impact of isolated stations in data sparse regions like in Sicily?
 
@@ -19,7 +19,7 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 ## List of small suggestions:
 
-- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5.
+- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. **Chiesto a Giorgio**
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
@@ -29,7 +29,7 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 - Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"?
 
-- Line 129: does the gradient have an health impact? 😉
+- Line 129: does the gradient have an health impact? 😉 **Chiesto a Giorgio**
 
 - Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it.
 
@@ -39,11 +39,11 @@ Did you include al types of stations? Especially traffic/industrial are impacted
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
-- Line 163: How do these high values impact the results? Were they single station events or regional phenomena?
+- Line 163: How do these high values impact the results? Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
 - Line 266-269 belongs to the methodology section above
 
-- Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions?
+- Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions? **Chiesto a Giorgio**
 
 - Line 311: same here, there are good reasons why summer time PM10 levels are correlated across larger areas when you connect the emission situation, orography and mixing layer height.
 
