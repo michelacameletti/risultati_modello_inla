@@ -41,7 +41,7 @@ In the same direction, you calculated the number of chance of exceeding the annu
 
 **We have modified the sentence position.**
 
-- Lin 97-98: could you move the code availability to the methodology section? **As explained above, the code availability now belons to the "Software" section in "Materials and Methods".
+- Lin 97-98: could you move the code availability to the methodology section? **As explained above, the code availability now belongs to the "Software" section in "Materials and Methods".**
 
 - Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"? **Thanks for the suggestion, we have included this in the paper.**
 
@@ -74,7 +74,7 @@ We have modified this sentence
 
  Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
-- Line 266-269 belongs to the methodology section above
+- Line 266-269 belongs to the methodology section above **As already explained (see the comment to Lines 97-98), the code availability now belongs to the "Software" section in "Materials and Methods".** 
 
 - Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions? **Chiesto a Giorgio**
 
