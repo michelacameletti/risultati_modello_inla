@@ -33,7 +33,9 @@ In the same direction, you calculated the number of chance of exceeding the annu
 ## List of small suggestions:
 
 
-- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
+- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? **<---QUESTA NON LA CAPISCO PROPRIO**
+
+Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
 
 **Chiesto a Giorgio**
 
@@ -47,13 +49,13 @@ In the same direction, you calculated the number of chance of exceeding the annu
 
 - Line 129: does the gradient have an health impact? 😉 **Chiesto a Giorgio**
 
-- Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. **Yes ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
+- Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. **ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
 
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
 
 You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
 
-**The model was run using the same set of stations for every month. To make the text more clear, we have changed the original sentence 'we have removed all stations with less than 10 valid observations per month' into 'we have kept only stations that had at least 10 valid daily mean concentrations per each month'**
+**The model was run using the same set of stations for every month in order to keep constant in time the station density. To make the text more clear, we have changed the original sentence 'we have removed all stations with less than 10 valid observations per month' into 'we have kept only stations that had at least 10 valid daily mean concentrations per each month'**
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
@@ -63,14 +65,14 @@ You talk about observations per month, but the daily means are composed of avera
 147 on the other hand contaminated areas (located particularly within urban areas)
 148 typically require denser networks (EU, 2002).
 
-**Proposta Guido:<---- SARA TU GIA? l'avevi modificata, vedi se cosi' ti va bene**
+**Proposta Guido/Sara:**
 145 This bias is not unexpected, as contaminated areas typically require denser networks (EU, 2002).
 
 We have modified this sentence
 
 - Line 163: How do these high values impact the results?  
 
-**In the section 3.2 (Validation) we have underlined that the  model  fails  to  reproduce  very  high  concentrations  above  150 μg/m3. Figure 6 (urban time series, July) shows a situation where the model underestimates such high values. However, we are confident that the model is able to provide a realistic description of the spaio-temporal variability of the PM10 concentrations:  the validation results  highlight show, overall,  the monthly  models  perform  well  both  in the training  and  in  the  validation  stage, with performance measures (credible interval, RMSE, correlation) having sensible results."** 
+**In the section 3.2 (Validation section ) we have underlined that the  model  fails  to  reproduce  very  high  PM10 concentrations (i.e., above  150 μg/m3). As an example, Figure 6 (urban time series, July) illustrates a situation where the model underestimates such high observations. However, the validation results  indicate that, overall,our model provides a realistic description of the spatio-temporal variability of the PM10 concentrations. Specifically, our results show that the monthly  models  perform  well  both  in the training  and  in  the  validation  stage, with performance measures (credible interval, RMSE, correlation) having sensible results."** 
 
  Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
@@ -80,25 +82,15 @@ We have modified this sentence
 
 - Line 311: same here, there are good reasons why summer time PM10 levels are correlated across larger areas when you connect the emission situation, orography and mixing layer height.
 
-
-**Frase incriminata**
-
-There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.
-
-**Frase proposta**
-
-There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability [most of which is/which is mostly] explained by the model predictors. 
+**We have included in the text a short explaination of why in summer time PM10 levels are correlated across larger areas. The original sentence was "*There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.*".The new sentence reads "*There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability [most of which is/which is mostly] explained by the model predictors.*" 
 
 
 
 ## Section on validation: 
 
-*the first lines reflect the methodology. Could you integrate that to the method section? Until this point, I was wondering whether you performed an evaluation on a subset of the data. How did you select the 10 % validation set?*
+*the first lines reflect the methodology. Could you integrate that to the method section? **See the answers to the comments to "Line 97-98" and "Line 266-269"**.  Until this point, I was wondering whether you performed an evaluation on a subset of the data. How did you select the 10 % validation set?*
 
 - Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? **GIORGIO**
-
-
-
 
 # Revisioni
 
