@@ -107,14 +107,9 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
   
   **The captions of the figures now report the long variable name as suggested by the reviewer**
   
- **Guido: ho modificato il grafico mettendo il nome per esteso di ogni singola variabile. Aggiungere alla fine di ogni variabile anche la sigla del parametro 
- tra parentesi? Esempio: Surface Pressure (sp)** 
-  
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now 
 
 **The scatterplot now represents the number of points of each hexbin on a logairthmic scale, with the result of lower range and a more contrastwd plot**
-
-**Guido: Il grafico ora rappresenta il log del conteggio dei punti in ciascun tassello esagonale, in modo di avere un range di valori piu' ristretto ed evitare "the blue effect".**
  
 
 - Figure 6: **it would be nice to know which stations are shown and where they are locateda- Aggiungere nella caption i nomi delle stazioni/localit delle stazioni e i codici EU?**.  Please adjust the range of the scale
@@ -131,8 +126,6 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
-
-**Guido: Le figure sono state modificate**
 
 **As suggested by Sara, but not by the reviewer,we have slightly modified the range of the scale for the variance maps of Figure 7 and 8. The final result is a set of maps more readable**
 
