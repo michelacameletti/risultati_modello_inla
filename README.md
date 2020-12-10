@@ -19,7 +19,7 @@ First of all, I would like to advise to structure the paper a bit further by gro
 
 In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
 
-**Guido: We are not able to provide such statistics as the exceedance maps were created to illustrate a potential application of the final model.  The final model was constructed using all the available input stations. Conversely, the input dataset was split into a training and validation dataset only with the purpose of evaluating the predictive performances of the model with respect to the daily PM10 meanconcentraions.**   
+**Guido: We are not able to provide such statistics as the exceedance maps were created to illustrate a potential application of the final model.  The final model was constructed using all the available input stations. Conversely, the input dataset was split into a training and validation dataset in the validation stage of our analysis, with the purpose of evaluating the predictive performances of the model with respect to the daily PM10 meanconcentraions.**   
 
 - Concerning the choice of predictors one could also use of gridded PM emissions instead of imperviousness or modelled PM10/2.5 distributions the CAMS regional air quality service or a single CTM. Could you add a little discussion on potential further options to improve the predictor set? Now there are few lines on it.
 
