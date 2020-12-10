@@ -150,7 +150,7 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
     
     - [figura con posizione stazione: stazione rural](./nuove_figure/graficiSerieValidazione_ruralJanuary.png)
     
-  **Following the reviewer's suggestions, we have changed the range of the scale for the urban station (January series). In addition, we have added an inset which depicts the shape of the Italian Peninsula along with the position of each station"**
+  **Following the reviewer's suggestions, we have changed the range of the scale for the urban station (January series). In addition, we have added an inset which depicts the shape of the Italian Peninsula along with the position of each station. Now, the caption reports the name of the three depicted stations."**
 
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
