@@ -91,7 +91,7 @@ We have modified this sentence
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
-"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term.
+**"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term.**
 
 Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Friedman J. The Elements of Statistical Learning.**
 
@@ -99,7 +99,7 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 - In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
 
-**Sara**: We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper. 
+**Sara: We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper.**
 
 **Giorgio ci fornisce il numero di stazioni di traffico, industriali etc in modo di poter dire al reviewr che noi utilizziamo solo la distinzione delle stazioni in base al tipo di area (urban, suburban, rural) ma fornirgli anche un numero di stazioni che sono industriali, di traffico etc**
 
