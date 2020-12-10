@@ -50,10 +50,10 @@ In the same direction, you calculated the number of chance of exceeding the annu
 - Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. **Yes ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
 
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
+
 You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
 
-We use the same stations for every month. We have changed the text to make this more clear.
-
+**The model was run using the same set of stations for every month. To make the text more clear, we have changed the original sentence 'we have removed all stations with less than 10 valid observations per month' into 'we have kept only stations that had at least 10 valid daily mean concentrations per each month'**
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
