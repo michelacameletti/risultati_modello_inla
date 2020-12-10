@@ -68,7 +68,9 @@ You talk about observations per month, but the daily means are composed of avera
 
 We have modified this sentence
 
-- Line 163: How do these high values impact the results?  **In the section 3.2 (Validation) we have underlined that the  model  fails  to  reproduce  very  high  concentrations  above  150 μg/m3. Figure 6 (urban time series, July) shows a situation where the model underestimates such high values. However, we are confident that the model is able to provide a realistic description of the spaio-temporal variability of the PM10 concentrations:  the validation results  highlight show, overall,  the monthly  models  perform  well  both  in the training  and  in  the  validation  stage, with performance measures (credible interval, RMSE, correlation) having sensible results." 
+- Line 163: How do these high values impact the results?  
+
+**In the section 3.2 (Validation) we have underlined that the  model  fails  to  reproduce  very  high  concentrations  above  150 μg/m3. Figure 6 (urban time series, July) shows a situation where the model underestimates such high values. However, we are confident that the model is able to provide a realistic description of the spaio-temporal variability of the PM10 concentrations:  the validation results  highlight show, overall,  the monthly  models  perform  well  both  in the training  and  in  the  validation  stage, with performance measures (credible interval, RMSE, correlation) having sensible results."** 
 
  Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
