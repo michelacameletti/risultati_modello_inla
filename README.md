@@ -31,7 +31,7 @@ In the same direction, you calculated the number of chance of exceeding the annu
 
 - Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. **Chiesto a Giorgio**
 
-- Line 76: this is not a start of a new paragraph
+- Line 76: this is not a start of a new paragraph **Corretto, credo da Sara**
 
 We have modified this.
 
