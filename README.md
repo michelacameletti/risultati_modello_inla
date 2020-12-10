@@ -55,6 +55,15 @@ We use the same stations for every month. We have changed the text to make this 
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
+**Frase originale:**
+145 This situation is not unexpected:  if on the one hand monitoring networks are designed to ensure
+146 observational measures being representative of both high and low polluted areas, 
+147 on the other hand contaminated areas (located particularly within urban areas)
+148 typically require denser networks (EU, 2002).
+
+**Proposta Guido:**
+145 This situation is not unexpected, as contaminated areas typically require denser networks (EU, 2002).
+
 We have modified this sentence
 
 - Line 163: How do these high values impact the results? Were they single station events or regional phenomena? **Chiesto a Giorgio**
