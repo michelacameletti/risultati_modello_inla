@@ -14,7 +14,12 @@ First of all, I would like to advise to structure the paper a bit further by gro
 - What is the impact of isolated stations in data sparse regions like in Sicily
 **Guido: The impact of the isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where there are more monitoring sites and higher (brown areas) otherwise. This is apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range called the Sicanian Mountains.**
 
-- I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
+- I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? 
+**Guido: As explained in the paper, our model is a monthly model, that is to say a model with the same set of covariates whose effect varies across the year. For this reason, it was straightforward to calculate the uncertainty maps at the monthly level (Figure 8). On the contrary, the uncertainty associated to the annual means would require a unique annual model which is not the object of our study.**
+
+In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
+
+** Guido: We are not able to provide such statistics as the exceedance maps were created as an example of a potential application of the final model.  This model was constructed using all the available input stations. Conversely, the input dataset was split into training and validation datasets only with the purpose of evaluating the predictive performances of the model with respect to the daily PM10 meanconcentraions.**   
 
 - Concerning the choice of predictors one could also use of gridded PM emissions instead of imperviousness or modelled PM10/2.5 distributions the CAMS regional air quality service or a single CTM. Could you add a little discussion on potential further options to improve the predictor set? Now there are few lines on it.
 
