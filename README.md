@@ -107,7 +107,7 @@ There is a clear tendency for the SPDE range to be larger in summer,correspondin
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
-**"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term. As an example, see the paper of Rodriguez et al. (2019).**
+**"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term. The paper of Rodriguez et al. (2019) provides an example of the use of the term "frequentist" in relation with air quality issues.**
 
 *NOX and PM10 Bayesian concentration estimates using high-resolution numerical simulations and ground measurements over Paris, France,
 Atmospheric Environment: X,Volume 3, 2019, 100038,mISSN 2590-1621, https://doi.org/10.1016/j.aeaoa.2019.100038.*
