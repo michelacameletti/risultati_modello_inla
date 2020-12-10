@@ -7,7 +7,9 @@ Risultati per il modello del PM10
 
 *The paper describes a nice application of statistical modelling to generate high resolution PM maps across Italy, which is difficult to obtain with other approaches (such as chemistry transport modelling).  I am positive about this paper and would advise to accept it with minor revisions. Below I list some of the issues I like to see addressed in the final version, complemented by a list of small suggestions.*
 
-First of all, I would like to advise to structure the paper a bit further by grouping al methodology aspects in to the methods section. Now they are partly still in sections with results. **Guido: creata una sezione software a fine paragrafo Materials and Methods. Rivedere con Michela e Giorgio dove posizionarlo**
+First of all, I would like to advise to structure the paper a bit further by grouping al methodology aspects in to the methods section. Now they are partly still in sections with results.
+
+**The structure of the "Materials and Methods" section was slightly changed. Now, it includes a "Software" subsection where the code and software details are explained. Originally, these  pieces of informations were included in the "Results" section". 
 
 Second, I have the following questions and suggestions:
 
