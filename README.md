@@ -61,12 +61,14 @@ We use the same stations for every month. We have changed the text to make this 
 147 on the other hand contaminated areas (located particularly within urban areas)
 148 typically require denser networks (EU, 2002).
 
-**Proposta Guido:**
-145 This situation is not unexpected, as contaminated areas typically require denser networks (EU, 2002).
+**Proposta Guido:<---- SARA TU GIA? l'avevi modificata, vedi se cosi' ti va bene**
+145 This bias is not unexpected, as contaminated areas typically require denser networks (EU, 2002).
 
 We have modified this sentence
 
-- Line 163: How do these high values impact the results? Were they single station events or regional phenomena? **Chiesto a Giorgio**
+- Line 163: How do these high values impact the results? 
+
+ Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
 - Line 266-269 belongs to the methodology section above
 
