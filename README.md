@@ -16,9 +16,11 @@ Second, I have the following questions and suggestions:
 - PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures? **Chiesto a Giorgio**
 
 - What is the impact of isolated stations in data sparse regions like in Sicily
+
 **Guido: The impact of the isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where there are more monitoring sites and higher (brown areas) otherwise. This is apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range called the Sicanian Mountains.**
 
 - I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? 
+
 **Guido: As explained in the paper, our model is a monthly model, that is to say a model with the same set of covariates whose effect varies across the year. For this reason, it was straightforward to calculate the uncertainty maps at the monthly level (Figure 8). On the contrary, the uncertainty associated to the annual means would require a unique annual model which is not the object of our study.**
 
 In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
@@ -31,23 +33,21 @@ In the same direction, you calculated the number of chance of exceeding the annu
 ## List of small suggestions:
 
 
-- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. **Chiesto a Giorgio**
+- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
 
-- Line 76: this is not a start of a new paragraph **Corretto, credo da Sara**
+**Chiesto a Giorgio**
 
-We have modified this.
+- Line 76: this is not a start of a new paragraph 
 
-- Lin 97-98: could you move the code availability to the methodology section?
+**We have modified the sentence position.**
 
-- Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"?
+- Lin 97-98: could you move the code availability to the methodology section? **As explained above, the code availability now belons to the "Software" section in "Materials and Methods".
 
-Thanks for the suggestion, we have included this in the paper.
+- Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"? **Thanks for the suggestion, we have included this in the paper.**
 
 - Line 129: does the gradient have an health impact? 😉 **Chiesto a Giorgio**
 
-- Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it.
-
-Yes ISPRA is the acronym for the institute, so we have left it in the paper.
+- Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. **Yes ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
 
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
 You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
