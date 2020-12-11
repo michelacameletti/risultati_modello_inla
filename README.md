@@ -90,6 +90,8 @@ We have modified this sentence
 
 *the first lines reflect the methodology. Could you integrate that to the method section? **See the answers to the comments to "Line 97-98" and "Line 266-269"**.  Until this point, I was wondering whether you performed an evaluation on a subset of the data. How did you select the 10 % validation set?*
 
+**At the beginning of the validation section, we provide details about the selection of the validation set. Specifically,first we stratified the input stations into three groups according to their area type category (urban, suburban and rural). Then we sampled, without replacement, 10% of the stations from each group. The sampling process was repeated three times (trials), with the result of three validation and training datasets.**
+
 - Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? **GIORGIO**
 
 # Revisioni
