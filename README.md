@@ -134,10 +134,10 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
   
 - Figure 5: using a lower range would provide more contrast in the plots. They are very blue now 
 
-**The scatterplot now represents the number of points of each hexbin on a logairthmic scale, with the result of lower range and a more contrastwd plot**
+**The scatterplot now represents the number of points of each hexbin on a logairthmic scale, with the result of a lower range and a more contrasted plot**
  
 
-- Figure 6: **it would be nice to know which stations are shown and where they are locateda- Aggiungere nella caption i nomi delle stazioni/localit delle stazioni e i codici EU?**.  Please adjust the range of the scale
+- Figure 6: **it would be nice to know which stations are shown and where they are located**.  Please adjust the range of the scale
  
     - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) 
     
@@ -147,12 +147,12 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
     
     - [figura con posizione stazione: stazione rural](./nuove_figure/graficiSerieValidazione_ruralJanuary.png)
     
-  **Following the reviewer's suggestions, we have changed the range of the scale for the urban station (January series). In addition, we have added an inset which depicts the shape of the Italian Peninsula along with the position of each station. Now, the caption reports the name of the three depicted stations."**
+  **Following the reviewer's suggestions, we have changed the range of the scale for the urban station for the January series. In addition, we have added an inset to each January time series to show the position of the corresponding station. In addition, the caption reports the stations names."**
 
 
 - Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
 
-**As suggested by Sara, but not by the reviewer,we have slightly modified the range of the scale for the variance maps of Figure 7 and 8. The final result is a set of maps more readable**
+**We have slightly modified the range of the scale for the variance maps of Figure 7 and 8. The final result is a set of maps more readable**
 
   - January 26 (giornaliera): [figura articolo](./figure_originali/giornaliera26GennaioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera26GennaioRocv_palettabilbao.png)
 
