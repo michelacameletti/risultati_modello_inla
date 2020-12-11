@@ -85,7 +85,7 @@ We have modified this sentence
 
 - Line 311: same here, there are good reasons why summer time PM10 levels are correlated across larger areas when you connect the emission situation, orography and mixing layer height.
 
-**We have included in the text a short explaination of why in summer time PM10 levels are correlated across larger areas. The original sentence was "*There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.*".The new sentence reads "*There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability [most of which is/which is mostly] explained by the model predictors.*" 
+**We have included in the text a short explaination of why in summer time PM10 levels are correlated across larger areas. The original sentence was "*There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.*".The new sentence reads "*There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability [most of which is/which is mostly] explained by the model predictors*."**
 
 
 
