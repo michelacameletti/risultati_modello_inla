@@ -115,7 +115,9 @@ Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Fried
 
 - In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
 
-**Sara: We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper.**
+**Sara: We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper.
+We have considered the input stations according to their environment type classification (urban, suburban and rural)
+**
 
 **Giorgio ci fornisce il numero di stazioni di traffico, industriali etc in modo di poter dire al reviewr che noi utilizziamo solo la distinzione delle stazioni in base al tipo di area (urban, suburban, rural) ma fornirgli anche un numero di stazioni che sono industriali, di traffico etc**
 
