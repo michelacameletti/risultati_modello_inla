@@ -29,7 +29,7 @@ In the same direction, you calculated the number of chance of exceeding the annu
 
 - Concerning the choice of predictors one could also use of gridded PM emissions instead of imperviousness or modelled PM10/2.5 distributions the CAMS regional air quality service or a single CTM. Could you add a little discussion on potential further options to improve the predictor set? Now there are few lines on it.
 
-**We reviewd the "Conclusions" section, including a comment about the use of gridded PM emissions products to improve the predictive model performance**
+**We reviewed the "Conclusions" section, including a comment about the use of gridded PM emissions products to improve the predictive model performance**
 
 
 
