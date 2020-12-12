@@ -17,7 +17,7 @@ Second, I have the following questions and suggestions:
 
 - What is the impact of isolated stations in data sparse regions like in Sicily
 
-**Guido: The impact of the isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where the network of the monitoring sites is denser and higher (brown areas) otherwise. This is particularly apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range (Sicanian Mountains).**
+**Guido: The impact of isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where the network of the monitoring sites is denser and higher (brown areas) otherwise. This is particularly apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range (Sicanian Mountains).**
 
 - I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? 
 
@@ -46,21 +46,31 @@ Can be used as a motivation why the focus on PM10 in stead of PM2.5.
 
 **We have modified the sentence position.**
 
-- Lin 97-98: could you move the code availability to the methodology section? **As explained above, the code availability now belongs to the "Software" section in "Materials and Methods".**
+- Lin 97-98: could you move the code availability to the methodology section? 
 
-- Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"? **Thanks for the suggestion, we have included this in the paper.**
+**The code availability now belongs to the "Software" section in "Materials and Methods".**
 
-- Line 129: does the gradient have an health impact? 😉 **Chiesto a Giorgio**
+- Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"? 
 
-- Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. **ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
+**Thanks for the suggestion, we have included this in the paper.**
+
+- Line 129: does the gradient have an health impact? 😉 
+
+**Chiesto a Giorgio**
+
+- Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. 
+
+**ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
 
 - Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
 
 You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
 
-**The model was run using the same set of stations for every month in order to keep constant in time the station density. To make the text more clear, we have changed the original sentence 'we have removed all stations with less than 10 valid observations per month' into 'we have kept only stations that had at least 10 valid daily mean concentrations per each month'**
+**The model was run using the same set of stations for every month in order to keep constant in time the station density. To make the text more clear, we have changed the original sentence 'we have removed all stations with less than 10 valid observations per month' into 'we have kept only stations that had at least 10 valid daily mean concentrations per each month'. Also, we now use the expression "valid daily mean concentrations" as suggested by the reviewer**
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
+
+**We have modified the sentence.**
 
 **Frase originale:**
 145 This situation is not unexpected:  if on the one hand monitoring networks are designed to ensure
@@ -71,7 +81,6 @@ You talk about observations per month, but the daily means are composed of avera
 **Proposta Guido/Sara:**
 145 This bias is not unexpected, as contaminated areas typically require denser networks (EU, 2002).
 
-We have modified this sentence
 
 - Line 163: How do these high values impact the results?  
 
@@ -79,7 +88,9 @@ We have modified this sentence
 
  Were they single station events or regional phenomena? **Chiesto a Giorgio**
 
-- Line 266-269 belongs to the methodology section above **As already explained (see the comment to Lines 97-98), the code availability now belongs to the "Software" section in "Materials and Methods".** 
+- Line 266-269 belongs to the methodology section above 
+
+**The code availability now belongs to the "Software" section in "Materials and Methods".** 
 
 - Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions? **Chiesto a Giorgio**
 
@@ -91,7 +102,11 @@ We have modified this sentence
 
 ## Section on validation: 
 
-*the first lines reflect the methodology. Could you integrate that to the method section? **See the answers to the comments to "Line 97-98" and "Line 266-269"**.  Until this point, I was wondering whether you performed an evaluation on a subset of the data. How did you select the 10 % validation set?*
+*the first lines reflect the methodology. Could you integrate that to the method section? 
+
+**See the answers to the comments to "Line 97-98" and "Line 266-269"**.  
+
+Until this point, I was wondering whether you performed an evaluation on a subset of the data. How did you select the 10 % validation set?*
 
 **At the beginning of the validation section, we provide details about the selection of the validation set. Specifically,first we stratified the input stations into three groups according to their area type category (urban, suburban and rural). Then we sampled, without replacement, 10% of the stations from each group. The sampling process was repeated three times (trials), with the result of three validation and training datasets.**
 
