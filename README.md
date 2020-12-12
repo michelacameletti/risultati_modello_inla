@@ -9,11 +9,13 @@ Risultati per il modello del PM10
 
 First of all, I would like to advise to structure the paper a bit further by grouping al methodology aspects in to the methods section. Now they are partly still in sections with results.
 
-**The structure of the "Materials and Methods" section was slightly changed. Now, it includes a "Software" subsection where the code and software details are explained. Originally, these  pieces of informations were included in the "Results" section".** 
+ - **The structure of the "Materials and Methods" section was slightly changed. Now, it includes a "Software" subsection where the code and software details are explained. Originally, these  pieces of informations were included in the "Results" section".** 
 
 Second, I have the following questions and suggestions:
 
-- PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures? **Chiesto a Giorgio**
+- PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures? 
+
+ - **Chiesto a Giorgio**
 
 - What is the impact of isolated stations in data sparse regions like in Sicily
 
