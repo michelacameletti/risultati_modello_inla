@@ -19,7 +19,7 @@ Second, I have the following questions and suggestions:
 
 - What is the impact of isolated stations in data sparse regions like in Sicily
 
-**Guido: The impact of isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where the network of the monitoring sites is denser and higher (brown areas) otherwise. This is particularly apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range (Sicanian Mountains).**
+**The impact of isolated stations can be desumed by the relative width of the posterior interquartile range maps (lower maps of Figure 7 and 8), which show the relative uncertainty of the predicted concentrations surface. Both daily and monthly maps highlight that the uncertainty is lower (white areas) where the network of the monitoring sites is denser and higher (brown areas) otherwise. This is particularly apparent in mountainous areas like the Alps in the North, the Appennine across the centre of Italy, and in the west-central Sicily which is covered by an irregular range (Sicanian Mountains).**
 
 - I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? 
 
@@ -27,22 +27,28 @@ Second, I have the following questions and suggestions:
 
 In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
 
-**Guido: We are not able to provide such statistics as the exceedance maps were created to illustrate a potential application of the final model. In such model , the parameters were estimated using all the available input stations. Conversely, the input dataset was split into a training and validation dataset in the validation stage of our analysis, with the purpose of evaluating the predictive performances of the model with respect to the daily PM10 mean concentrations.**   
+**We are not able to provide such statistics as the exceedance maps were created to illustrate a potential application of the final model. In such model , the parameters were estimated using all the available input stations. Conversely, the input dataset was split into a training and validation dataset in the validation stage of our analysis, with the purpose of evaluating the predictive performances of the model with respect to the daily PM10 mean concentrations.**   
 
 - Concerning the choice of predictors one could also use of gridded PM emissions instead of imperviousness or modelled PM10/2.5 distributions the CAMS regional air quality service or a single CTM. Could you add a little discussion on potential further options to improve the predictor set? Now there are few lines on it.
 
 **We reviewed the "Conclusions" section, including a comment about the use of gridded PM emissions products to improve the predictive model performance**
 
-
-
 ## List of small suggestions:
 
+- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
 
-- Line 11: It would be stronger to mention the result of the study here. Fine or coarse? **<---QUESTA NON LA CAPISCO PROPRIO**
+**QUESTA NON LA CAPISCO PROPRIO Chiesto a Giorgio**
 
-Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
+- Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
-**Chiesto a Giorgio**
+**"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term. The paper of Rodriguez et al. (2019) provides an example of the use of the term "frequentist" in relation with air quality issues.**
+
+*NOX and PM10 Bayesian concentration estimates using high-resolution numerical simulations and ground measurements over Paris, France,
+Atmospheric Environment: X,Volume 3, 2019, 100038,mISSN 2590-1621, https://doi.org/10.1016/j.aeaoa.2019.100038.*
+
+*The Bayesian approach differs from the standard (“frequentist”) method for inference in its use of a prior distribution to express the uncertainty present before seeing the data, and to allow the uncertainty remaining after seeing the data to be expressed in the form of a posterior distribution.(pagina 289)* 
+
+**Hastie, T., Tibshirani R.,, Friedman J. The Elements of Statistical Learning.**
 
 - Line 76: this is not a start of a new paragraph 
 
@@ -50,7 +56,7 @@ Can be used as a motivation why the focus on PM10 in stead of PM2.5.
 
 - Lin 97-98: could you move the code availability to the methodology section? 
 
-**The code availability now belongs to the "Software" section in "Materials and Methods".**
+**Now the code availability belongs to the "Software" subsection at the end of the "Materials and Methods" section.**
 
 - Line 128: in stead of with positive trend write "with concentrations decreasing towards the north"? 
 
@@ -64,25 +70,19 @@ Can be used as a motivation why the focus on PM10 in stead of PM2.5.
 
 **ISPRA is the acronym for the Italian Institute for Environmental Protection and Research (Rome), so we have left it in the paper.**
 
-- Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise?
-
-You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
+- Line 139: Does the mentioned criteria mean that you use a different set of observations for each month in the mapping procedure? Or did you remove the annual time series for every station with a missing month? The monthly time step in the training procedure is not introduced yet at this point (except the abstract).  Can you phrase the sentence a bit more concise? You talk about observations per month, but the daily means are composed of averaged hourly or half-hourly values. Better to talk about "valid daily mean concentrations" or so (see line 142)? 
 
 **The model was run using the same set of stations for every month in order to keep constant in time the station density. To make the text more clear, we have changed the original sentence 'we have removed all stations with less than 10 valid observations per month' into 'we have kept only stations that had at least 10 valid daily mean concentrations per each month'. Also, we now use the expression "valid daily mean concentrations" as suggested by the reviewer**
+
+- In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
+
+**We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper.
+For validation purposes, we have stratified the input stations according to their environment type classification: urban (294 stations), suburban (131) and rural (70). Our analysis did not consider the sources of local air pollution as a further classification criteria of the input stations. However, we know that the urban stations include:	background stations (146),	industrial stations (8) and traffic stations (140). As for the the suburban stations, most of them are classified as foreground (77) and industrial (41) stations. Finally, most of the rural stations are background stations (54).  **
+**
 
 - Line 147-148 you say twice the same thing in the on the one hand/other hand. Maybe remove the whole sentence as it does not add so much to the story
 
 **We have modified the sentence.**
-
-**Frase originale:**
-145 This situation is not unexpected:  if on the one hand monitoring networks are designed to ensure
-146 observational measures being representative of both high and low polluted areas, 
-147 on the other hand contaminated areas (located particularly within urban areas)
-148 typically require denser networks (EU, 2002).
-
-**Proposta Guido/Sara:**
-145 This bias is not unexpected, as contaminated areas typically require denser networks (EU, 2002).
-
 
 - Line 163: How do these high values impact the results?  
 
@@ -94,7 +94,9 @@ You talk about observations per month, but the daily means are composed of avera
 
 **The code availability now belongs to the "Software" section in "Materials and Methods".** 
 
-- Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions? **Chiesto a Giorgio**
+- Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions? 
+
+**Chiesto a Giorgio**
 
 - Line 311: same here, there are good reasons why summer time PM10 levels are correlated across larger areas when you connect the emission situation, orography and mixing layer height.
 
@@ -102,9 +104,7 @@ You talk about observations per month, but the daily means are composed of avera
 
 
 
-## Section on validation: 
-
-*the first lines reflect the methodology. Could you integrate that to the method section? 
+## Section on validation: *the first lines reflect the methodology. Could you integrate that to the method section? 
 
 **See the answers to the comments to "Line 97-98" and "Line 266-269"**.  
 
@@ -114,36 +114,11 @@ Until this point, I was wondering whether you performed an evaluation on a subse
 
 - Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? **GIORGIO**
 
-# Revisioni
-
-
-### List of small suggestions:
-
-- Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
-
-**"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term. The paper of Rodriguez et al. (2019) provides an example of the use of the term "frequentist" in relation with air quality issues.**
-
-*NOX and PM10 Bayesian concentration estimates using high-resolution numerical simulations and ground measurements over Paris, France,
-Atmospheric Environment: X,Volume 3, 2019, 100038,mISSN 2590-1621, https://doi.org/10.1016/j.aeaoa.2019.100038.*
-
-Vogliamo fornire un riferimento? Ad esempio: **Hastie, T., Tibshirani R.,, Friedman J. The Elements of Statistical Learning.**
-
-*The Bayesian approach differs from the standard (“frequentist”) method for inference in its use of a prior distribution to express the uncertainty present before seeing the data, and to allow the uncertainty remaining after seeing the data to be expressed in the form of a posterior distribution.(pagina 289)*
-
-- In line 143 use the term "monitoring stations" (in stead of "measurements" are located) Did you include al types of stations? Especially traffic/industrial are impacted by local source increments and I am curious how you treated those.
-
-**We have changed "measurements" with "monitoring stations" as suggested by the reviewer. As for the monitoring stations included in the study: yes we have included all kinds of stations, the only criteria we have used to exclude a station is the presence of too many missing data as explained in the paper.
-For validation purposes, we have stratified the input stations according to their environment type classification: urban (294 stations), suburban (131) and rural (70). Our analysis did not consider the sources of local air pollution as a further classification criteria of the input stations. However, we know that the urban stations include:	background stations (146),	industrial stations (8) and traffic stations (140). As for the the suburban stations, most of them are classified as foreground (77) and industrial (41) stations. Finally, most of the rural stations are background stations (54).  **
-**
-
-**Giorgio ci fornisce il numero di stazioni di traffico, industriali etc in modo di poter dire al reviewr che noi utilizziamo solo la distinzione delle stazioni in base al tipo di area (urban, suburban, rural) ma fornirgli anche un numero di stazioni che sono industriali, di traffico etc**
-
-
-### Section on validation:
-
 - Line 443: the method for population exposure could go up
 
-**Guido: ho spostato il paragrafo "*population exposure*" prima delle "exceedence probability maps*" (con il risultato di avere ora le figure nel pdf incasinate :-) ), Non sono sicuro di cosa volesse il reviewer con questo commento!**
+**We have changed the position of the "Population Exposure" paragraph."**
+
+**-------> Non sono sicuro di cosa volesse il reviewer con questo commento!**
 
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. 
 
@@ -155,8 +130,7 @@ For validation purposes, we have stratified the input stations according to thei
 
 **The scatterplot now represents the number of points of each hexbin on a logairthmic scale, with the result of a lower range and a more contrasted plot**
  
-
-- Figure 6: **it would be nice to know which stations are shown and where they are located**.  Please adjust the range of the scale
+- Figure 6: it would be nice to know which stations are shown and where they are located.  Please adjust the range of the scale
  
     - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) 
     
