@@ -38,6 +38,7 @@ In the same direction, you calculated the number of chance of exceeding the annu
 - Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
 
 **QUESTA NON LA CAPISCO PROPRIO Chiesto a Giorgio**
+**Sara: neanche io capisco cosa vuole**
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
 
@@ -65,6 +66,7 @@ In the same direction, you calculated the number of chance of exceeding the annu
 - Line 129: does the gradient have an health impact? 😉 
 
 **Chiesto a Giorgio**
+**Sara: Secondo  me questa era un'osservazione per dire che la frase non ci capiva...perche sembrava dire che il gradiente aveva un effetto sulla salute. Io risponderei tipo : We have modified this sentence to make it more understandable.**
 
 - Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. 
 
@@ -88,7 +90,10 @@ For validation purposes, we have stratified the input stations according to thei
 
 **In the section 3.2 (Validation section ) we have underlined that the  model  fails  to  reproduce  very  high  PM10 concentrations (i.e., above  150 μg/m3). As an example, Figure 6 (urban time series, July) illustrates a situation where the model underestimates such high observations. However, the validation results  indicate that, overall,our model provides a realistic description of the spatio-temporal variability of the PM10 concentrations. Specifically, our results show that the monthly  models  perform  well  both  in the training  and  in  the  validation  stage, with performance measures (credible interval, RMSE, correlation) having sensible results."** 
 
- Were they single station events or regional phenomena? **Chiesto a Giorgio**
+ Were they single station events or regional phenomena?
+ 
+ **Chiesto a Giorgio**
+ ***Sara: The very high level in our data appear to be rather local in space and in time. Therefore they might be due to very local phenomena that our model is not able to capture*
 
 - Line 266-269 belongs to the methodology section above 
 
@@ -104,7 +109,9 @@ For validation purposes, we have stratified the input stations according to thei
 
 
 
-## Section on validation: *the first lines reflect the methodology. Could you integrate that to the method section? 
+## Section on validation: 
+
+- the first lines reflect the methodology. Could you integrate that to the method section? 
 
 **See the answers to the comments to "Line 97-98" and "Line 266-269"**.  
 
@@ -112,7 +119,9 @@ Until this point, I was wondering whether you performed an evaluation on a subse
 
 **At the beginning of the validation section, we provide details about the selection of the validation set. Specifically,first we stratified the input stations into three groups according to their area type category (urban, suburban and rural). Then we sampled, without replacement, 10% of the stations from each group. The sampling process was repeated three times (trials), with the result of three validation and training datasets.**
 
-- Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? **GIORGIO**
+- Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? 
+
+**GIORGIO**
 
 - Line 443: the method for population exposure could go up
 
