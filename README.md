@@ -35,7 +35,7 @@ Second, I have the following questions and suggestions:
 
 **No, we did not try this. As explained in the paper, our model is a monthly model, that is to say a model with the same set of covariates whose effect on the target variable (PM10) has been estimated on a monthly basis. For this reason, it was straightforward to calculate the monthly uncertainty maps (Figure 8). On the contrary, the uncertainty associated to the annual means would require a unique annual model (namely, to estimate the overall effect of the covariates on the PM10 pooling all the months) which is not the object of our study.**
 
-In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
+- In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
 
 **We are not able to provide such statistics as the exceedance maps were created to illustrate a potential application of the final model. In such model , the parameters were estimated using all the available input stations. Conversely, the input dataset was split into a training and validation dataset in the validation stage of our analysis, with the purpose of evaluating the predictive performances of the model with respect to the daily PM10 mean concentrations.**   
 
