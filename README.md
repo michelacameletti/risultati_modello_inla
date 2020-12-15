@@ -47,7 +47,8 @@ Second, I have the following questions and suggestions:
 
 - Line 11: It would be stronger to mention the result of the study here. Fine or coarse? Can be used as a motivation why the focus on PM10 in stead of PM2.5. 
 
-**QUESTA NON LA CAPISCO PROPRIO Chiesto a Giorgio**
+**QUESTA NON LA CAPISCO PROPRIO Chiesto a Giorgio. Michela hai commenti?**
+
 **Sara: neanche io capisco cosa vuole**
 
 - Line 46: I don't understand the term "frequentist". Could you explain what is meant by it?
@@ -55,9 +56,6 @@ Second, I have the following questions and suggestions:
 **"Frequentist" is  a term, much used in the statistical community, that indicates all inferential techniques that assume the parameters to be fixed, although unknown, quantities. This is in contrast with the Bayesian approach that considers model parameters as stochastic variables with their own probability density. It could maybe be substituted by "classical" but we believe that frequentist is the most common term, therefore we have decided to leave it in the paper. The paper of Rodriguez et al. (2019) provides an example of the use of the term "frequentist" in relation with air quality issues.**
 
 *NOX and PM10 Bayesian concentration estimates using high-resolution numerical simulations and ground measurements over Paris, France. Rodriguez, D. and Parent, E. and Eymard, L. and Valari, M. and Payan, S. Atmospheric Environment: X,Volume 3, 2019, 100038,mISSN 2590-1621, https://doi.org/10.1016/j.aeaoa.2019.100038.*
-
-
-#**Hastie, T., Tibshirani R.,, Friedman J. The Elements of Statistical Learning.**
 
 - Line 76: this is not a start of a new paragraph 
 
