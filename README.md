@@ -33,7 +33,7 @@ Second, I have the following questions and suggestions:
 
 - I am wondering if the evaluation on annual means would remove a lot of the effects of the daily noise. Did you try this? 
 
-**Guido: No, we did not try this. As explained in the paper, our model is a monthly model, that is to say a model with the same set of covariates whose effect on the target variable (PM10) has been estimated on a monthly basis. For this reason, it was straightforward to calculate the monthly uncertainty maps (Figure 8). On the contrary, the uncertainty associated to the annual means would require a unique annual model (namely, to estimate the overall effect of the covariates on the PM10 pooling all the months) which is not the object of our study.**
+**No, we did not try this. As explained in the paper, our model is a monthly model, that is to say a model with the same set of covariates whose effect on the target variable (PM10) has been estimated on a monthly basis. For this reason, it was straightforward to calculate the monthly uncertainty maps (Figure 8). On the contrary, the uncertainty associated to the annual means would require a unique annual model (namely, to estimate the overall effect of the covariates on the PM10 pooling all the months) which is not the object of our study.**
 
 In the same direction, you calculated the number of chance of exceeding the annual number of days above 50 ug/m3. Could you provide evaluation statistics in comparison to the stations you left out in the training?
 
@@ -75,8 +75,7 @@ In the same direction, you calculated the number of chance of exceeding the annu
 
 - Line 129: does the gradient have an health impact? 😉 
 
-**Chiesto a Giorgio**
-**Sara: Secondo  me questa era un'osservazione per dire che la frase non ci capiva...perche sembrava dire che il gradiente aveva un effetto sulla salute. Io risponderei tipo : We have modified this sentence to make it more understandable.**
+**We have modified this sentence to make it more understandable.**
 
 - Line 134: Is ISPRA the institute? It is a bit confusing with JRC being in Ispra (town). If the acronym is ISPRA is the real one please use it. 
 
@@ -102,8 +101,7 @@ For validation purposes, we have stratified the input stations according to thei
 
  Were they single station events or regional phenomena?
  
- **Chiesto a Giorgio**
- ***Sara: The very high level in our data appear to be rather local in space and in time. Therefore they might be due to very local phenomena that our model is not able to capture*
+ **The very high level in our data appear to be rather local in space and in time. Therefore they might be due to very local phenomena that our model is not able to capture**
 
 - Line 266-269 belongs to the methodology section above 
 
@@ -111,12 +109,11 @@ For validation purposes, we have stratified the input stations according to thei
 
 - Line 287: could you try to explain/interpret this behavior accounting for urban emissions and mixing conditions? 
 
-**Chiesto a Giorgio**
+**Chiesto a Giorgio. Michela hai commenti?**
 
 - Line 311: same here, there are good reasons why summer time PM10 levels are correlated across larger areas when you connect the emission situation, orography and mixing layer height.
 
 **We have included in the text a short explaination of why in summer time PM10 levels are correlated across larger areas. The original sentence was "*There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.*".The new sentence reads "*There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability [most of which is/which is mostly] explained by the model predictors*."**
-
 
 
 ## Section on validation: 
@@ -131,7 +128,8 @@ Until this point, I was wondering whether you performed an evaluation on a subse
 
 - Line 363: Are the mentioned spikes regional phenomena of effects of local activities/events (festival, fireworks, …)? 
 
-**GIORGIO**
+**As observed above (comment to line 163), the spikes are likely to be effects of local phenomena**
+
 
 - Line 443: the method for population exposure could go up
 
