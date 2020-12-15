@@ -134,8 +134,6 @@ Until this point, I was wondering whether you performed an evaluation on a subse
 
 **We have changed the position of the "Population Exposure" paragraph."**
 
-**-------> Non sono sicuro di cosa volesse il reviewer con questo commento!**
-
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. 
   
   **The captions of the figures now report the long variable name as suggested by the reviewer**
