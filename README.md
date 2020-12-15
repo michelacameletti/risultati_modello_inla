@@ -112,7 +112,7 @@ For validation purposes, we have stratified the input stations according to thei
 
 - Line 311: same here, there are good reasons why summer time PM10 levels are correlated across larger areas when you connect the emission situation, orography and mixing layer height.
 
-**We have included in the text a short explaination of why in summer time PM10 levels are correlated across larger areas. The original sentence was "*There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.*".The new sentence reads "*There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability [most of which is/which is mostly] explained by the model predictors*."**
+**We have included in the text a short explaination of why in summer time PM10 levels are correlated across larger areas. The original sentence was "*There is a clear tendency for the range to be larger in summer corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd.*".The new sentence reads "*There is a clear tendency for the SPDE range to be larger in summer,corresponding to a spatially smoother particulate matter field; the same behaviour holds for the posterior sd. This result reflects the fact that, in summer time, the PM10 concentrations are characterized by low spatial variability  mostly explained by the model predictors*."**
 
 
 ## Section on validation: 
@@ -137,8 +137,6 @@ Until this point, I was wondering whether you performed an evaluation on a subse
 **-------> Non sono sicuro di cosa volesse il reviewer con questo commento!**
 
 - Figure 3: when the captions of the figures reflect the long variable name the figure would be more easy to read. 
-
-  - [figura articolo](./figure_originali/ggRidgePatchwork.png) e e [figura con nuovi titoli covariate](./nuove_figure/ggRidgePatchwork.png)
   
   **The captions of the figures now report the long variable name as suggested by the reviewer**
   
@@ -148,26 +146,8 @@ Until this point, I was wondering whether you performed an evaluation on a subse
  
 - Figure 6: it would be nice to know which stations are shown and where they are located.  Please adjust the range of the scale
  
-    - [figura articolo](./figure_originali/graficiSerieValidazione_urbanJanuary.png) 
-    
-    - [figura con nuovo asse y e posizione stazione: stazione urban](./nuove_figure/graficiSerieValidazione_urbanJanuary.png)
-
-    - [figura con posizione stazione: stazione suburban](./nuove_figure/graficiSerieValidazione_suburbanJanuary.png)
-    
-    - [figura con posizione stazione: stazione rural](./nuove_figure/graficiSerieValidazione_ruralJanuary.png)
-    
   **Following the reviewer's suggestions, we have changed the range of the scale for the urban station for the January series. In addition, we have added an inset to each January time series to show the position of the corresponding station. In addition, the caption reports the stations names."**
 
+**In addition we have also modified  the scale for the variance maps of Figure 7 and 8 to make the spatial differences in variances to be more visible.**
 
-- Figura 7 e 8 [SARA] cambiare la scala della mappa per la varianza: 
-
-**We have slightly modified the range of the scale for the variance maps of Figure 7 and 8. The final result is a set of maps more readable**
-
-  - January 26 (giornaliera): [figura articolo](./figure_originali/giornaliera26GennaioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera26GennaioRocv_palettabilbao.png)
-
-  - July 21 (giornaliera): [figura articolo](./figure_originali/giornaliera21LuglioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/giornaliera21LuglioRocv_palettabilbao.png)
-  
-   - January 26 (mensile): [figura articolo](./figure_originali/mensileGennaioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/mensileGennaioRocv_palettabilbao.png)
-
-  - July 21 (mensile): [figura articolo](./figure_originali/mensileLuglioRocv_palettabilbao.png) e [figura con nuova scala](./nuove_figure/mensileLuglioRocv_palettabilbao.png)
 
