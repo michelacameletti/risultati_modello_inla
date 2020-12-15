@@ -24,7 +24,7 @@ Second, I have the following questions and suggestions:
  
  - **Risposta Guido**
  
- **Thanks to this solid evidence and to the good quality of ambient monitoring networks, which provide  daily  measurements  of  air  pollutants,  it  is  now  possible  to  reliably  assess  the  health  impact  of  air  pollution  on  urban  populations. 
+ **In  Italy,  over the last years the design of monitoring networks has being reviewed in line with the principles established by the Legislative Decree 155/2010. Revised monitoring networks are more compliant and more consistent, with better integration with other air quality assessment tools and therefore more  appropriate for assessing exposure of the population and the environment as a whole.**
  
 
 - What is the impact of isolated stations in data sparse regions like in Sicily
