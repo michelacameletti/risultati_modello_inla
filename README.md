@@ -6,8 +6,6 @@ Dear Editor,
 
 Thank you for the reviewer's additional comments and suggestions, which we carefully considered to improve and resubmit our manuscript “Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach”. 
 
-Please address each comment in a separate letter ("Response to Reviewers") to be submitted along with a clean copy and a highlighted/tracked changes copy of the manuscript.  Both manuscript copies should be the same version, with the highlighted version clearly showing changes made.
-
 Please find enclosed a clean copy of the revised manuscript, as long as a highlighted changes copy. Detailed replies to the reviewer comments are provided in the "Response to Reviewers" separate letter. We would like to thank the reviewer for his positive comment, and we hope that our manuscript will be acceptable for publication in Atmospheric Environment.
 
 ## Reviewer 1: 
@@ -23,6 +21,11 @@ Second, I have the following questions and suggestions:
 - PM10 is measured with different techniques. Could you detect the impact of different techniques in the study? Or are the networks so well organized they use the same procedures? 
 
  - **Chiesto a Giorgio**
+ 
+ - **Risposta Guido**
+ 
+ **Thanks to this solid evidence and to the good quality of ambient monitoring networks, which provide  daily  measurements  of  air  pollutants,  it  is  now  possible  to  reliably  assess  the  health  impact  of  air  pollution  on  urban  populations. 
+ 
 
 - What is the impact of isolated stations in data sparse regions like in Sicily
 
