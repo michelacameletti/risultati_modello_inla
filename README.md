@@ -1,7 +1,14 @@
+
+
 # Risultati modello INLA
 
-Risultati per il modello del PM10
+Dear Editor,
 
+Thank you for the reviewer's additional comments and suggestions, which we carefully considered to improve and resubmit our manuscript “Spatio-temporal modelling of PM10 daily concentrations in Italy using the SPDE approach”. 
+
+Please address each comment in a separate letter ("Response to Reviewers") to be submitted along with a clean copy and a highlighted/tracked changes copy of the manuscript.  Both manuscript copies should be the same version, with the highlighted version clearly showing changes made.
+
+Please find enclosed a clean copy of the revised manuscript, as long as a highlighted changes copy. Detailed replies to the reviewer comments are provided in the "Response to Reviewers" separate letter. We would like to thank the reviewer for his positive comment, and we hope that our manuscript will be acceptable for publication in Atmospheric Environment.
 
 ## Reviewer 1: 
 
